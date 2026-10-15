@@ -1,0 +1,15 @@
+application/logs/*
+!application/logs/index.html
+application/cache/*
+!application/cache/index.html
+!application/cache/.htaccess
+*.log
+.vscode/
+Thumbs.db
+.DS_Store
+
+# Environment-specific secrets (see *.example templates)
+application/config/stripe.php
+application/config/paypal.php
+application/config/database.php
+application/config/config.php
