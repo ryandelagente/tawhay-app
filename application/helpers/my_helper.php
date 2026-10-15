@@ -3985,7 +3985,7 @@
         if(!is_numeric($amount)){
             $amount = 0;
         }
-        $getCompanyInfo = getCompanyInfo();
+        $getCompanyInfo = getCompanyInfoForAmount();
         $currency_position = $getCompanyInfo->currency_position;
         $currency = $getCompanyInfo->currency;
         $precision = $getCompanyInfo->precision;
@@ -4001,7 +4001,7 @@
         if(!is_numeric($amount)){
             $amount = 0;
         }
-        $getCompanyInfo = getCompanyInfo(1);
+        $getCompanyInfo = getCompanyInfoForAmount(1);
         $currency_position = $getCompanyInfo->currency_position;
         $currency = $getCompanyInfo->currency;
         $precision = $getCompanyInfo->precision;
@@ -4019,7 +4019,7 @@
         if(!is_numeric($amount)){
             $amount = 0;
         }
-        $getCompanyInfo = getCompanyInfo($company_id);
+        $getCompanyInfo = getCompanyInfoForAmount($company_id);
         $currency_position = $getCompanyInfo->currency_position;
         $currency = $getCompanyInfo->currency;
         $precision = $getCompanyInfo->precision;
@@ -4044,11 +4044,26 @@
      * @return string
      * @param int
      */
+    /**
+     * company info for amount formatting, cached for the current request
+     * (amounts are formatted once per item, so querying every time is slow)
+     * @access public
+     * @return object
+     */
+    function getCompanyInfoForAmount($company_id = '') {
+        static $cache = array();
+        $CI = & get_instance();
+        $key = $company_id.'|'.$CI->session->userdata('company_id').'|'.$CI->session->userdata('go_online_status').'|'.$CI->session->userdata('online_selected_company');
+        if(!isset($cache[$key])){
+            $cache[$key] = getCompanyInfo($company_id);
+        }
+        return $cache[$key];
+    }
     function getAmtP($amount) {
         if(!is_numeric($amount)){
             $amount = 0;
         }
-        $getCompanyInfo = getCompanyInfo();
+        $getCompanyInfo = getCompanyInfoForAmount();
         $precision = $getCompanyInfo->precision;
         $str_amount = (number_format(isset($amount) && $amount?$amount:0,$precision,'.',''));
         return $str_amount;
@@ -4057,7 +4072,7 @@
         if(!is_numeric($amount)){
             $amount = 0;
         }
-        $getCompanyInfo = getCompanyInfo();
+        $getCompanyInfo = getCompanyInfoForAmount();
         $precision = $getCompanyInfo->precision;
         $decimals_separator = isset($getCompanyInfo->decimals_separator) && $getCompanyInfo->decimals_separator?$getCompanyInfo->decimals_separator:'.';
         $thousands_separator = isset($getCompanyInfo->thousands_separator) && $getCompanyInfo->thousands_separator?$getCompanyInfo->thousands_separator:'';
