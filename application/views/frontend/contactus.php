@@ -2,7 +2,7 @@
 $company_info      = getMainCompany();
 $reservation_times = isset($company_info->reservation_times) && $company_info->reservation_times ? json_decode($company_info->reservation_times) : '';
 $online_selected_outlet_updated = $this->session->userdata('online_selected_outlet_updated');
-$outlet_details = getOutletById($online_selected_outlet);
+$outlet_details = getOutletById($online_selected_outlet_updated);
 ?>
 
 <div class="contact-wrapper contact-page">
