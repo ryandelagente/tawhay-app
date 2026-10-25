@@ -3,6 +3,10 @@ $company_info      = getMainCompany();
 $reservation_times = isset($company_info->reservation_times) && $company_info->reservation_times ? json_decode($company_info->reservation_times) : '';
 $online_selected_outlet_updated = $this->session->userdata('online_selected_outlet_updated');
 $outlet_details = getOutletById($online_selected_outlet_updated);
+if(!$outlet_details && $company_info){
+    // visitors who open this page first have no outlet in their session yet
+    $outlet_details = $this->db->where('company_id', $company_info->id)->where('del_status', 'Live')->order_by('id')->limit(1)->get('tbl_outlets')->row();
+}
 ?>
 
 <div class="contact-wrapper contact-page">
