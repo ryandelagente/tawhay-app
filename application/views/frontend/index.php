@@ -77,14 +77,17 @@ $menu_booklet = 'uploads/website/tawhay-menu-booklet.pdf';
           if($explore_section_items){
               $explore_section_items_obj = json_decode($explore_section_items);
               foreach($explore_section_items_obj as $key=>$value){
-                $f_detials = getFoodMenuDetails($value->food_id)
+                $f_detials = getFoodMenuDetails($value->food_id);
+                if (!$f_detials || $f_detials->del_status != 'Live') continue;
+                // show the item's current name and price; the saved copy goes stale when the menu changes
+                $explore_name = html_entity_decode($f_detials->name, ENT_QUOTES, 'UTF-8');
       ?>
               <div class="col-lg-6">
                 <div class="ct-mini-menu-item">
                   <div>
                     <div class="ct-mini-menu-top">
-                      <h5><?php echo escape_output($value->name); ?></h5>
-                      <span class="price_sec"><?php echo escape_output(getAmtCustom($value->sale_price)); ?></span>
+                      <h5><?php echo escape_output($explore_name); ?></h5>
+                      <span class="price_sec"><?php echo escape_output(getAmtCustom($f_detials->sale_price)); ?></span>
                     </div>
                     <div class="ct-mini-menu-bottom">
                       <p><?php echo escape_output($value->description); ?></p>
