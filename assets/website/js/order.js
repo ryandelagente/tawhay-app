@@ -320,7 +320,9 @@
 
     let total_food_tax = getFoodMenuTax(details_item_price,food_menu_id);
     let item_details_qty = Number($("#item_details_qty").val());
-    let total = ((details_item_price + total_modifier_cost + total_tax + total_food_tax)*item_details_qty).toFixed(2);
+    // with tax-inclusive pricing the tax is already part of the price, so only add it for exclusive pricing
+    let extra_tax = Number($("#tax_type").val()) == 1 ? Number(total_tax) + Number(total_food_tax) : 0;
+    let total = ((details_item_price + total_modifier_cost + extra_tax)*item_details_qty).toFixed(2);
     $(".show_total_amount").html(currency+total);
     }
   }

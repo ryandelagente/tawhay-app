@@ -317,7 +317,7 @@ $language = $this->session->userdata('language');
 
   <!-- Page Specific Scripts -->
   <script src="<?php echo base_url() ?>assets/website/js/plugins/leaflet.js"></script>
-  <script src="<?php echo base_url() ?>assets/website/js/order.js?v=1.1"></script>
+  <script src="<?php echo base_url() ?>assets/website/js/order.js?v=1.2"></script>
 
   <!-- Checkout End -->
   <script>
