@@ -1546,7 +1546,7 @@ class Frontend extends Cl_Controller {
                 }
             }
         }
-        redirect('/');
+        redirect(base_url());
     }
 
     /**
@@ -1602,7 +1602,7 @@ class Frontend extends Cl_Controller {
                 $this->session->set_userdata($return_data);
             }
         }
-        redirect('/');
+        redirect(base_url());
     }
 
 
