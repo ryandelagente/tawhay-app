@@ -551,6 +551,13 @@ class Frontend extends Cl_Controller {
         $this->load->view('frontend/website_layout', $data);
     }
 
+    public function privacyPolicy(){
+        $data = array();
+        $data['header_content'] = $this->load->view('frontend/header_section_menu', $data, TRUE);
+        $data['main_content'] = $this->load->view('frontend/privacy_policy', $data, TRUE);
+        $this->load->view('frontend/website_layout', $data);
+    }
+
     public function oldOrders(){
         $data = array();
         $data['header_content'] = $this->load->view('frontend/header_section_menu', $data, TRUE);

@@ -107,6 +107,7 @@ $route['order-success/(:any)'] = 'frontend/orderSuccess/$1';
 $route['checkout'] = 'Frontend/checkoutPage';
 $route['about-us'] = 'Frontend/aboutUs';
 $route['photo-credits'] = 'Frontend/photoCredits';
+$route['privacy-policy'] = 'Frontend/privacyPolicy';
 $route['old-orders'] = 'Frontend/oldOrders';
 $route['order-details/(:any)'] = 'Frontend/orderDetails/$1';
 $route['contact-us'] = 'Frontend/contactUs';

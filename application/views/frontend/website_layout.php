@@ -242,6 +242,7 @@ $language = $this->session->userdata('language');
               <?php if (file_exists(FCPATH . 'uploads/website/photo_credits.json')): ?>
                 <li> <a href="<?php echo base_url() . 'photo-credits'; ?>">Photo Credits</a> </li>
               <?php endif; ?>
+              <li> <a href="<?php echo base_url() . 'privacy-policy'; ?>">Privacy Policy</a> </li>
             </ul>
           </div>
         </div>
