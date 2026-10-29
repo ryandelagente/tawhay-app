@@ -1565,7 +1565,6 @@ class Frontend extends Cl_Controller {
         if($this->facebook->is_authenticated()){
             // Get user info from facebook
             $fbUser = $this->facebook->request('get', '/me?fields=first_name,last_name,email');
-            pre($fbUser);exit;
             // Preparing data for database insertion
             $userData['first_name']    = !empty($fbUser['first_name'])?$fbUser['first_name']:'';
             $userData['last_name']    = !empty($fbUser['last_name'])?$fbUser['last_name']:'';
