@@ -8,7 +8,7 @@
     </div>
     <div class="privacy-policy-body">
       <p>
-        Tawhay By Crabs and Ribs ("Tawhay", "we", "us") runs the website tawhay.app for online ordering,
+        Tawhay Bistro Coron Palawan ("Tawhay", "we", "us") runs the website tawhay.app for online ordering,
         reservations and enquiries. This policy explains what personal information we collect, why we collect it,
         and the choices you have. We handle personal information in line with the Philippine Data Privacy Act of 2012
         (Republic Act No. 10173).
@@ -78,7 +78,7 @@
 
       <h4>Contact us</h4>
       <p>
-        Tawhay By Crabs and Ribs<br>
+        Tawhay Bistro Coron Palawan<br>
         National Highway, Brgy. 1, Coron, Palawan, 5316<br>
         Phone: <a href="tel:09542207334">0954 220 7334</a><br>
         Email: <a href="mailto:info@tawhay.app">info@tawhay.app</a>
