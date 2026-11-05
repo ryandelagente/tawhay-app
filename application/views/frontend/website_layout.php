@@ -183,7 +183,7 @@ $language = $this->session->userdata('language');
           <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 footer-widget">
             <div class="d-flex flex-column gap20px">
               <div class="footer-logo">
-                <?php $footer_logo = file_exists(FCPATH . 'images/tawhay_bistro_logo_cream.png') ? base_url() . 'images/tawhay_bistro_logo_cream.png' : $system_logo; ?>
+                <?php $footer_logo = file_exists(FCPATH . 'images/tawhay_logo_cream.png') ? base_url() . 'images/tawhay_logo_cream.png' : $system_logo; ?>
                 <img src="<?php echo $footer_logo; ?>" alt="logo">
               </div>
               <p>
