@@ -260,7 +260,14 @@ $(document).ready(function () {
         kotProcessQueue();
     }
 
+    let kot_baseline_done = false;
     function autoPrintNewOrders() {
+        // orders already open when the panel loads are the baseline: never auto print those
+        if (!kot_baseline_done) {
+            kot_baseline_done = true;
+            Object.keys(kot_orders).forEach(kotMarkPrinted);
+            return;
+        }
         if (kotStorageGet(KOT_AUTO_KEY) !== "1") {
             return;
         }
