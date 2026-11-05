@@ -29,6 +29,236 @@ $(document).ready(function () {
     let cook = $("#cook").val();
     let done = $("#done").val();
 
+    /***************************************************************************
+     ******************** KOT printing (58mm / RawBT) **************************
+     ***************************************************************************/
+    const KOT_OUTLET_NAME = "Tawhay By Crabs and Ribs";
+    const KOT_WIDTH = 32;
+    const KOT_AUTO_KEY = "kot_auto_print";
+    const KOT_PRINTED_KEY = "kot_printed_orders";
+    let kot_orders = {};
+    let kot_print_queue = [];
+    let kot_print_busy = false;
+
+    function kotStorageGet(key) {
+        try {
+            return window.localStorage.getItem(key);
+        } catch (e) {
+            return null;
+        }
+    }
+
+    function kotStorageSet(key, value) {
+        try {
+            window.localStorage.setItem(key, value);
+        } catch (e) {}
+    }
+
+    function kotPrintedList() {
+        try {
+            let list = JSON.parse(kotStorageGet(KOT_PRINTED_KEY) || "[]");
+            return Array.isArray(list) ? list.map(String) : [];
+        } catch (e) {
+            return [];
+        }
+    }
+
+    function kotMarkPrinted(order_id) {
+        let list = kotPrintedList();
+        order_id = String(order_id);
+        if (list.indexOf(order_id) === -1) {
+            list.push(order_id);
+        }
+        kotStorageSet(KOT_PRINTED_KEY, JSON.stringify(list.slice(-500)));
+    }
+
+    function kotWrap(text, width, indent) {
+        indent = indent || "";
+        let lines = [];
+        let line = indent;
+        String(text == null ? "" : text)
+            .split(/\s+/)
+            .filter(Boolean)
+            .forEach(function (word) {
+                while (word.length > width - indent.length) {
+                    if (line.trim() !== "") {
+                        lines.push(line);
+                        line = indent;
+                    }
+                    let room = width - indent.length;
+                    lines.push(indent + word.substr(0, room));
+                    word = word.substr(room);
+                }
+                if (line.trim() === "") {
+                    line = indent + word;
+                } else if ((line + " " + word).length <= width) {
+                    line += " " + word;
+                } else {
+                    lines.push(line);
+                    line = indent + word;
+                }
+            });
+        if (line.trim() !== "") {
+            lines.push(line);
+        }
+        return lines;
+    }
+
+    function kotCenter(text) {
+        return kotWrap(text, KOT_WIDTH).map(function (l) {
+            return " ".repeat(Math.max(0, Math.floor((KOT_WIDTH - l.length) / 2))) + l;
+        });
+    }
+
+    function kotField(label, value) {
+        return kotWrap(label + ": " + value, KOT_WIDTH, "").map(function (l, idx) {
+            return idx === 0 ? l : "  " + l.trim();
+        });
+    }
+
+    function buildKotText(order) {
+        let sep = "-".repeat(KOT_WIDTH);
+        let type_map = { 1: "Dine In", 2: "Take Away", 3: "Delivery" };
+        let out = [];
+        out = out.concat(kotCenter(KOT_OUTLET_NAME));
+        out = out.concat(kotCenter("KITCHEN ORDER TICKET"));
+        out.push(sep);
+        out = out.concat(kotField("Order", order.sale_no));
+        out = out.concat(kotField("Type", type_map[order.order_type] || ""));
+        if (order.orders_table_text) {
+            out = out.concat(kotField("Table", order.orders_table_text));
+        } else if (order.table_name) {
+            out = out.concat(kotField("Table", order.table_name));
+        }
+        if (order.waiter_name) {
+            out = out.concat(kotField("Waiter", order.waiter_name));
+        }
+        if (order.customer_name) {
+            out = out.concat(kotField("Customer", order.customer_name));
+        }
+        let d = order.date_time ? new Date(Date.parse(order.date_time)) : new Date();
+        if (isNaN(d.getTime())) {
+            d = new Date();
+        }
+        let pad = function (n) {
+            return (n < 10 ? "0" : "") + n;
+        };
+        out.push(
+            "Date: " + d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()) +
+                " " + pad(d.getHours()) + ":" + pad(d.getMinutes())
+        );
+        out.push(sep);
+
+        let total_qty = 0;
+        (order.items || []).forEach(function (item) {
+            let qty = parseFloat(item.qty) || 0;
+            total_qty += qty;
+            out = out.concat(kotWrap(qty + " x " + item.menu_name, KOT_WIDTH, ""));
+            if (item.menu_combo_items) {
+                out = out.concat(kotWrap("Items: " + item.menu_combo_items, KOT_WIDTH, "   "));
+            }
+            let mods = (item.modifiers || [])
+                .map(function (m) {
+                    return m.name;
+                })
+                .join(", ");
+            if (mods) {
+                out = out.concat(kotWrap("+ " + mods, KOT_WIDTH, "   "));
+            }
+            if (item.menu_note) {
+                out = out.concat(kotWrap("Note: " + item.menu_note, KOT_WIDTH, "   "));
+            }
+        });
+        out.push(sep);
+        out.push("Total items: " + (order.items || []).length + " (qty " + total_qty + ")");
+        return out.join("\n");
+    }
+
+    function kotFallbackPrint(text) {
+        let w = window.open("", "_blank", "width=300,height=600");
+        if (!w) {
+            return;
+        }
+        let safe = text.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+        w.document.write(
+            "<html><head><title>KOT</title><style>@page{size:58mm auto;margin:0}" +
+                "body{width:58mm;margin:0;padding:2mm}" +
+                "pre{font-family:monospace;font-size:11px;margin:0;white-space:pre-wrap}</style></head>" +
+                "<body><pre>" + safe + "</pre></body></html>"
+        );
+        w.document.close();
+        w.focus();
+        w.print();
+    }
+
+    function kotSend(text) {
+        let fallback_timer = null;
+        let cancel_fallback = function () {
+            clearTimeout(fallback_timer);
+            document.removeEventListener("visibilitychange", cancel_fallback);
+            window.removeEventListener("blur", cancel_fallback);
+        };
+        // If RawBT handles the link the page loses focus/visibility; if not, fall back to window.print()
+        document.addEventListener("visibilitychange", cancel_fallback);
+        window.addEventListener("blur", cancel_fallback);
+        fallback_timer = setTimeout(function () {
+            cancel_fallback();
+            kotFallbackPrint(text);
+        }, 1500);
+        let encoded = btoa(unescape(encodeURIComponent(text + "\n\n\n")));
+        window.location.href = "rawbt:base64," + encoded;
+    }
+
+    function kotProcessQueue() {
+        if (kot_print_busy || !kot_print_queue.length) {
+            return;
+        }
+        kot_print_busy = true;
+        kotSend(kot_print_queue.shift());
+        setTimeout(function () {
+            kot_print_busy = false;
+            kotProcessQueue();
+        }, 3000);
+    }
+
+    function printKot(order_id) {
+        let order = kot_orders[order_id];
+        if (!order) {
+            return;
+        }
+        kot_print_queue.push(buildKotText(order));
+        kotMarkPrinted(order_id);
+        kotProcessQueue();
+    }
+
+    function autoPrintNewOrders() {
+        if (kotStorageGet(KOT_AUTO_KEY) !== "1") {
+            return;
+        }
+        let printed = kotPrintedList();
+        Object.keys(kot_orders).forEach(function (order_id) {
+            if (printed.indexOf(String(order_id)) === -1) {
+                printKot(order_id);
+            }
+        });
+    }
+
+    $(document).on("click", ".print_kot_button", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        printKot($(this).attr("data-order-id"));
+    });
+
+    $("#auto_print_toggle").prop("checked", kotStorageGet(KOT_AUTO_KEY) === "1");
+    $(document).on("change", "#auto_print_toggle", function () {
+        let on = $(this).is(":checked");
+        kotStorageSet(KOT_AUTO_KEY, on ? "1" : "0");
+        if (on) {
+            // don't reprint what is already on screen when the toggle is switched on
+            Object.keys(kot_orders).forEach(kotMarkPrinted);
+        }
+    });
+
   $(document).on("click", "#refresh_orders_button", function () {
     $("#refresh_it_or_not").html("Yes");
     $("#group_by_order_item").val("").trigger("change");
@@ -1122,6 +1352,7 @@ $(document).ready(function () {
                 console.log(response);
                 let order_list_left = "";
                 let i = 1;
+                kot_orders = {};
                 for (let key in response) {
                     let items_tmp = response[key].items;
                     if(items_tmp.length){
@@ -1201,6 +1432,7 @@ $(document).ready(function () {
                         second = second.length == 1 ? "0" + second : second;
 
                         if (total_kitchen_type_items != total_kitchen_type_done_items) {
+                            kot_orders[response[key].sales_id] = response[key];
                             order_list_left +=
                                 '<div class="fix floatleft single_order" data-order-type="' +
                                 order_type +
@@ -1376,6 +1608,10 @@ $(document).ready(function () {
                                 '">'+cook+'</button><button class="done_cooking" id="done_cooking_' +
                                 response[key].sales_id +
                                 '">'+done+'</button>';
+                            order_list_left +=
+                                '<button class="print_kot_button" type="button" data-order-id="' +
+                                response[key].sales_id +
+                                '"><i class="fas fa-print"></i> Print</button>';
                             order_list_left += "</div>";
                             order_list_left += "</div>";
                         }
@@ -1384,6 +1620,7 @@ $(document).ready(function () {
                     }
                 }
                 $("#order_holder").html(order_list_left);
+                autoPrintNewOrders();
                 bgColorAdd();
                 $("#order_holder.order_holder .single_order .items_holder")
                     .slimscroll({

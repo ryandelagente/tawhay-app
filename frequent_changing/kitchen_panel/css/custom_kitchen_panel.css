@@ -121,6 +121,11 @@ body{
     background-color: #34A853;
     color: white !important;
 }
+.print_kot_button{
+    background-color: #3B82F6;
+    color: white !important;
+    border: 0;
+}
 /* .single_order_button_holder button:hover {
     background:rgb(228, 228, 228);
 } */

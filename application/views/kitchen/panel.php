@@ -70,7 +70,7 @@
     <link rel="shortcut icon" href="<?php echo escape_output($favicon) ?>" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css-framework/bootstrap-new/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/newDesign/style.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/kitchen_panel/css/custom_kitchen_panel.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/kitchen_panel/css/custom_kitchen_panel.css?v=<?php echo @filemtime(FCPATH."frequent_changing/kitchen_panel/css/custom_kitchen_panel.css"); ?>">
     <style>
         <?php if ($this->session->has_userdata('language')) {
                 $font_detect=$this->session->userdata('language');
@@ -174,6 +174,10 @@
                    <?php endif?>
                     <a class="btn bg-blue-btn me-2"href="<?php echo base_url(); ?>Kitchen/kitchens" id="logout_button"><i
                                 class="fas me-2 fas-caret-square-left"></i><?php echo lang('back'); ?></a>
+
+                    <label class="me-2 text-white d-flex align-items-center ir_mouse_pointer" for="auto_print_toggle">
+                        <input type="checkbox" id="auto_print_toggle" class="me-1"> Auto print new orders
+                    </label>
 
                     <div class="top_menu_right" id="group_by_order_item_holder ir_h_float_m"></div>
                     
@@ -286,7 +290,7 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>frequent_changing/kitchen_panel/js/datable.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>frequent_changing/kitchen_panel/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/POS/js/howler.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>frequent_changing/kitchen_panel/js/custom.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>frequent_changing/kitchen_panel/js/custom.js?v=<?php echo @filemtime(FCPATH."frequent_changing/kitchen_panel/js/custom.js"); ?>"></script>
     <!-- material icon -->
 
 </body>
