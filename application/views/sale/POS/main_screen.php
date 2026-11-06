@@ -524,7 +524,7 @@ foreach ($notifications as $single_notification){
     <title><?php echo escape_output($site_name); ?></title>
     <script src="<?php echo base_url()?>assets/POS/js/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/POS/css/style.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/POS/css/style2.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/POS/css/style2.css?v=2">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/POS/css/customModal.css">
     <script src="<?php echo base_url(); ?>assets/graph/go.js"></script>
     <script src="<?php echo base_url(); ?>assets/graph/dom-to-image.min.js"></script>
