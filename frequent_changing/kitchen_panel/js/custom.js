@@ -174,66 +174,8 @@ $(document).ready(function () {
         return out.join("\n");
     }
 
-    function kotFallbackPrint(text) {
-        let w = window.open("", "_blank", "width=300,height=600");
-        if (!w) {
-            return;
-        }
-        let safe = text.replace(/&/g, "&amp;").replace(/</g, "&lt;");
-        w.document.write(
-            "<html><head><title>KOT</title><style>@page{size:58mm auto;margin:0}" +
-                "body{width:58mm;margin:0;padding:2mm}" +
-                "pre{font-family:monospace;font-size:11px;margin:0;white-space:pre-wrap}</style></head>" +
-                "<body><pre>" + safe + "</pre></body></html>"
-        );
-        w.document.close();
-        w.focus();
-        w.print();
-    }
-
-    // Cashier-style popup: 58mm preview, then the system print dialog (pick RawBT there)
-    function kotPopupPrint(text) {
-        let w = window.open("", "_blank", "width=340,height=640");
-        if (!w) {
-            return false;
-        }
-        let safe = text.replace(/&/g, "&amp;").replace(/</g, "&lt;");
-        let rawbt = "rawbt:base64," + btoa(unescape(encodeURIComponent(text + "\n\n\n")));
-        w.document.write(
-            "<html><head><meta name='viewport' content='width=device-width,initial-scale=1'><title>KOT</title><style>" +
-                "@page{size:58mm auto;margin:0}" +
-                "body{width:58mm;margin:0 auto;padding:2mm}" +
-                "pre{font-family:monospace;font-size:11px;margin:0;white-space:pre-wrap}" +
-                ".bar{margin:8px 0;text-align:center}.bar button,.bar a{font-size:14px;padding:8px 12px;margin:2px;" +
-                "border:0;border-radius:4px;background:#3B82F6;color:#fff;text-decoration:none;display:inline-block}" +
-                "@media print{.bar{display:none}}</style></head><body>" +
-                "<div class='bar'><button onclick='window.print()'>Print</button>" +
-                "<a href='" + rawbt + "'>RawBT</a>" +
-                "<button onclick='window.close()'>Close</button></div>" +
-                "<pre>" + safe + "</pre></body></html>"
-        );
-        w.document.close();
-        w.focus();
-        setTimeout(function () {
-            w.print();
-        }, 300);
-        return true;
-    }
-
+    // Send straight to RawBT (no system print dialog, no fallback delay)
     function kotSend(text) {
-        let fallback_timer = null;
-        let cancel_fallback = function () {
-            clearTimeout(fallback_timer);
-            document.removeEventListener("visibilitychange", cancel_fallback);
-            window.removeEventListener("blur", cancel_fallback);
-        };
-        // If RawBT handles the link the page loses focus/visibility; if not, fall back to window.print()
-        document.addEventListener("visibilitychange", cancel_fallback);
-        window.addEventListener("blur", cancel_fallback);
-        fallback_timer = setTimeout(function () {
-            cancel_fallback();
-            kotFallbackPrint(text);
-        }, 1500);
         let encoded = btoa(unescape(encodeURIComponent(text + "\n\n\n")));
         window.location.href = "rawbt:base64," + encoded;
     }
@@ -287,11 +229,7 @@ $(document).ready(function () {
         if (!order) {
             return;
         }
-        if (kotPopupPrint(buildKotText(order))) {
-            kotMarkPrinted(order_id);
-        } else {
-            printKot(order_id);
-        }
+        printKot(order_id);
     });
 
     $("#auto_print_toggle").prop("checked", kotStorageGet(KOT_AUTO_KEY) === "1");
