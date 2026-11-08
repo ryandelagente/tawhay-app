@@ -6512,6 +6512,8 @@
                   if (selected_order_started_cooking_items > 0 || selected_order_done_cooking_items > 0) {
                       toastr['error']((order_in_progress_or_done), '');
                   }else{
+                      let user_role_now = $("base").attr("data-role");
+                      let ask_reason_dialog = function(approved_by){
                       swal({
                               title: warning + "!",
                               text: write_your_reason+"!",
@@ -6527,6 +6529,7 @@
                                   return false
                               }else{
                                   $(".sa-button-container").find('.cancel').click();
+                                  if(approved_by){ inputValue = inputValue + " (Approved by supervisor: " + approved_by + ")"; }
 
                                   let sale_no = $(".holder .order_details .single_order[data-selected=selected]").find(".running_order_order_number").text();
                                   if(checkInternetConnection()){
@@ -6553,6 +6556,44 @@
                                   }
                               }
                           });
+                      };
+                      if(user_role_now == "Admin"){
+                          ask_reason_dialog("");
+                      }else{
+                          swal({
+                                  title: "Supervisor approval required",
+                                  text: "Enter supervisor PIN to cancel this order",
+                                  type: "input",
+                                  inputType: "password",
+                                  showCancelButton: true,
+                                  closeOnConfirm: false,
+                                  animation: "slide-from-top",
+                                  inputPlaceholder: "Supervisor PIN" },
+                              function(pin){
+                                  if (pin === false) return false;
+                                  if (pin === "") {
+                                      swal.showInputError("Please enter PIN!");
+                                      return false;
+                                  }
+                                  $.ajax({
+                                      url: base_url + "Sale/verify_supervisor_pin",
+                                      method: "post",
+                                      dataType: "json",
+                                      data: {pin: pin},
+                                      success: function (res) {
+                                          if(res && res.status){
+                                              $(".sa-button-container").find('.cancel').click();
+                                              setTimeout(function(){ ask_reason_dialog(res.name); }, 300);
+                                          }else{
+                                              swal.showInputError("Invalid supervisor PIN!");
+                                          }
+                                      },
+                                      error: function () {
+                                          swal.showInputError("Unable to verify PIN. Check connection.");
+                                      },
+                                  });
+                              });
+                      }
                   }
   
               } else {

@@ -1724,6 +1724,27 @@ class Sale extends Cl_Controller {
     }
 
    
+    /**
+     * verify a supervisor (Admin/Manager) PIN, used to authorise order cancel
+     */
+    public function verify_supervisor_pin(){
+        $pin = htmlspecialcharscustom($this->input->post($this->security->xss_clean('pin')));
+        $res = array('status'=>false);
+        if($pin !== '' && $pin !== null){
+            $this->db->select("id,full_name,designation");
+            $this->db->from("tbl_users");
+            $this->db->where("login_pin", $pin);
+            $this->db->where("del_status", 'Live');
+            $this->db->where_in("designation", array('Admin','Manager'));
+            $user = $this->db->get()->row();
+            if($user){
+                $res = array('status'=>true,'name'=>$user->full_name);
+                putAuditLog($this->session->userdata('user_id'),"Supervisor ".$user->full_name." approved order cancel","Cancel Approval",date('Y-m-d H:i:s'));
+            }
+        }
+        echo json_encode($res);
+    }
+
     public function add_cancel_audit_report(){
         /*This variable could not be escaped because this is json data*/
         $order = $this->input->post('order');
