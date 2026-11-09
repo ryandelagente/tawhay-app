@@ -97,5 +97,5 @@ if ($this->session->flashdata('exception_1')) {
     </div>
 </section>
 
-<script src="<?php echo base_url(); ?>assets/dist/js/jquery.dragsort.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/menu_sorting.js"></script>
+<script src="<?php echo asset_url('assets/dist/js/jquery.dragsort.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/menu_sorting.js'); ?>"></script>

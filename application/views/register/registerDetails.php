@@ -16,7 +16,7 @@
         </h3>
     </section>
 
-    <link href="<?php echo base_url(); ?>frequent_changing/css/register_details.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo asset_url('frequent_changing/css/register_details.css'); ?>" rel="stylesheet" type="text/css" />
     <div class="box-wrapper">
         <!-- general form elements -->
         <div class="table-box">
@@ -42,15 +42,15 @@
 <input type="hidden" id="menu_not_permit_access" value="<?php echo lang('menu_not_permit_access'); ?>">
 <input type="hidden" id="pos_21" value="<?php echo getPOSChecker("73","pos_21"); ?>">
 <!--for datatable-->
-<script src="<?php echo base_url(); ?>assets/datatable_custom/jquery-3.3.1.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/dataTables.bootstrap4.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/dataTables.buttons.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/buttons.html5.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/buttons.print.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/jszip.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/pdfmake.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/vfs_fonts.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/newDesign/js/forTable.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/register_details.js"></script>
+<script src="<?php echo asset_url('assets/datatable_custom/jquery-3.3.1.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/jquery.dataTables.min.js'); ?>"></script>
+<script src="<?php echo asset_url('assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/dataTables.bootstrap4.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/dataTables.buttons.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/buttons.html5.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/buttons.print.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/jszip.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/pdfmake.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/vfs_fonts.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/newDesign/js/forTable.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/register_details.js'); ?>"></script>

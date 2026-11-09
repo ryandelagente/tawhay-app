@@ -522,46 +522,46 @@ foreach ($notifications as $single_notification){
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <title><?php echo escape_output($site_name); ?></title>
-    <script src="<?php echo base_url()?>assets/POS/js/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/POS/css/style.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/POS/css/style2.css?v=2">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/POS/css/customModal.css">
-    <script src="<?php echo base_url(); ?>assets/graph/go.js"></script>
-    <script src="<?php echo base_url(); ?>assets/graph/dom-to-image.min.js"></script>
+    <script src="<?php echo asset_url('assets/POS/js/jquery-3.3.1.min.js'); ?>"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo asset_url('assets/POS/css/style.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo asset_url('assets/POS/css/style2.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo asset_url('assets/POS/css/customModal.css'); ?>">
+    <script src="<?php echo asset_url('assets/graph/go.js'); ?>"></script>
+    <script src="<?php echo asset_url('assets/graph/dom-to-image.min.js'); ?>"></script>
     <!-- font awesome -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/fontawesome-free-6.5.1-web/css/all.min.css?var=1.6">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/POS/css/lib/font_awesomeV5P/css/pro.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/select2/dist/css/select2.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/font_awesomeV5P/css/pro.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>asset/plugins/iCheck/minimal/color-scheme.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/POS/css/jquery-ui.css">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/POS/css/lib/font_awesomeV5P/css/pro.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/bower_components/select2/dist/css/select2.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/bower_components/font_awesomeV5P/css/pro.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('asset/plugins/iCheck/minimal/color-scheme.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/POS/css/jquery-ui.css'); ?>">
     <!-- For Tooltips -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/POS/css/lib/tippy/tippy.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/POS/css/lib/tippy/scale.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/POS/css/lib/tippy/theme_light.css">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/POS/css/lib/tippy/tippy.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/POS/css/lib/tippy/scale.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/POS/css/lib/tippy/theme_light.css'); ?>">
     <!-- Customer Scrollbar js -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/POS/css/lib/scrollbar/jquery.scrollbar.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/common.css">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/POS/css/lib/scrollbar/jquery.scrollbar.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/dist/css/common.css'); ?>">
 
-    <link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/custom_css.css">
+    <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/custom_css.css'); ?>">
 
-    <script src="<?php echo base_url()?>assets/POS/js/jquery-ui.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/POS/js/lib/scrollbar/slimScrollbar.js"></script>
+    <script src="<?php echo asset_url('assets/POS/js/jquery-ui.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo asset_url('assets/POS/js/lib/scrollbar/slimScrollbar.js'); ?>"></script>
     <!-- Sweet alert -->
-    <script src="<?php echo base_url(); ?>assets/POS/sweetalert2/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/POS/sweetalert2/dist/sweetalert.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/POS/css/custom_pos.css">
+    <script src="<?php echo asset_url('assets/POS/sweetalert2/dist/sweetalert.min.js'); ?>"></script>
+    <link rel="stylesheet" href="<?php echo asset_url('assets/POS/sweetalert2/dist/sweetalert.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/POS/css/custom_pos.css'); ?>">
     <!--notification for waiter panel-->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/notify/jquery.notifyBar.css">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/plugins/notify/jquery.notifyBar.css'); ?>">
     <script type="text/javascript"
-        src="<?php echo base_url(); ?>assets/bower_components/select2/dist/js/select2.full.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/POS/js/calculator.js"></script>
+        src="<?php echo asset_url('assets/bower_components/select2/dist/js/select2.full.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo asset_url('assets/POS/js/calculator.js'); ?>"></script>
 
     <!--for delivery_partner-->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/delivery_partner.css">
-    <link href="<?php echo base_url(); ?>frequent_changing/notify/toastr.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo base_url(); ?>frequent_changing/css/register_details.css" rel="stylesheet" type="text/css" />
-    <script src="<?php echo base_url(); ?>frequent_changing/js/jquery.spincrement.js"></script>
+    <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/delivery_partner.css'); ?>">
+    <link href="<?php echo asset_url('frequent_changing/notify/toastr.css'); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo asset_url('frequent_changing/css/register_details.css'); ?>" rel="stylesheet" type="text/css" />
+    <script src="<?php echo asset_url('frequent_changing/js/jquery.spincrement.js'); ?>"></script>
     <base data-base="<?php echo base_url(); ?>">
     </base>
     <base data-collect-tax="<?php echo escape_output($getCompanyInfo->collect_tax); ?>">
@@ -576,13 +576,13 @@ foreach ($notifications as $single_notification){
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="<?php echo escape_output($favicon) ?>" type="image/x-icon">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/POS/css/datepicker.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/POS/css/animate.min.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/POS/css/lib/perfect-scrollbar/css/perfect-scrollbar.css">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/POS/css/datepicker.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/POS/css/animate.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/POS/css/lib/perfect-scrollbar/css/perfect-scrollbar.css'); ?>">
 
-    <link rel="stylesheet" href="<?php echo base_url()?>frequent_changing/table_design/custom_card_design_zak.css">
-    <link rel="stylesheet" href="<?php echo base_url()?>frequent_changing/table_design/jquery-ui.css">
-    <link rel="stylesheet" href="<?php echo base_url()?>frequent_changing/table_design/jquery-ui.structure.css">
+    <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/table_design/custom_card_design_zak.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/table_design/jquery-ui.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/table_design/jquery-ui.structure.css'); ?>">
 
 
     <style>
@@ -4572,27 +4572,27 @@ endif;
         window.menu_objects = [<?php echo ($menu_objects);?>];
     </script>
 
-    <script src="<?php echo base_url(); ?>frequent_changing/notify/toastr.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/POS/js/marquee.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/POS/js/items.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/POS/js/datable.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/POS/js/jquery.cookie.js"></script>
+    <script src="<?php echo asset_url('frequent_changing/notify/toastr.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo asset_url('assets/POS/js/marquee.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo asset_url('assets/POS/js/items.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo asset_url('assets/POS/js/datable.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo asset_url('assets/POS/js/jquery.cookie.js'); ?>"></script>
     <!-- For Tooltip -->
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/POS/js/lib/tippy/popper.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/POS/js/lib/tippy/tippy-bundle.umd.min.js">
+    <script type="text/javascript" src="<?php echo asset_url('assets/POS/js/lib/tippy/popper.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo asset_url('assets/POS/js/lib/tippy/tippy-bundle.umd.min.js'); ?>">
     </script>
-    <script src="<?php echo base_url(); ?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url();?>assets/POS/js/lib/datepicker.js"></script>
+    <script src="<?php echo asset_url('assets/bower_components/bootstrap/dist/js/bootstrap.min.js'); ?>"></script>
+    <script src="<?php echo asset_url('assets/POS/js/lib/datepicker.js'); ?>"></script>
     <!-- Custom Scrollbar -->
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/POS/js/lib/scrollbar/jquery.scrollbar.min.js">
+    <script type="text/javascript" src="<?php echo asset_url('assets/POS/js/lib/scrollbar/jquery.scrollbar.min.js'); ?>">
     </script>
-    <script src="<?php echo base_url(); ?>assets/POS/css/lib/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+    <script src="<?php echo asset_url('assets/POS/css/lib/perfect-scrollbar/js/perfect-scrollbar.min.js'); ?>"></script>
 
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/POS/js/howler.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/dist/js/feather.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>frequent_changing/js/pos_script_v7.3.js?v=7.6.2"></script>
-    <script src="<?php echo base_url(); ?>assets/POS/js/media.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/notify/jquery.notifyBar.js"></script>
+    <script type="text/javascript" src="<?php echo asset_url('assets/POS/js/howler.min.js'); ?>"></script>
+    <script src="<?php echo asset_url('assets/dist/js/feather.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo asset_url('frequent_changing/js/pos_script_v7.3.js'); ?>"></script>
+    <script src="<?php echo asset_url('assets/POS/js/media.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo asset_url('assets/plugins/notify/jquery.notifyBar.js'); ?>"></script>
     <script type="text/javascript">
     /*This variable could not be escaped because this is building object*/
     window.customers = [<?php echo ($customer_objects);?>]
@@ -4631,19 +4631,19 @@ endif;
     </script>
 
     <!--for datatable-->
-    <script src="<?php echo base_url(); ?>assets/datatable_custom/jquery-3.3.1.js"></script>
-    <script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/jquery.dataTables.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-    <script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/dataTables.bootstrap4.min.js"></script>
-    <script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/dataTables.buttons.min.js"></script>
-    <script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/buttons.html5.min.js"></script>
-    <script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/buttons.print.min.js"></script>
-    <script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/jszip.min.js"></script>
-    <script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/pdfmake.min.js"></script>
-    <script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/vfs_fonts.js"></script>
-    <script src="<?php echo base_url(); ?>frequent_changing/newDesign/js/forTable.js"></script>
-    <script src="<?php echo base_url(); ?>frequent_changing/js/register_details.js"></script>   
-    <script src="<?php echo base_url(); ?>frequent_changing/js/new_ui_design.js"></script>   
+    <script src="<?php echo asset_url('assets/datatable_custom/jquery-3.3.1.js'); ?>"></script>
+    <script src="<?php echo asset_url('frequent_changing/js/dataTable/jquery.dataTables.min.js'); ?>"></script>
+    <script src="<?php echo asset_url('assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js'); ?>"></script>
+    <script src="<?php echo asset_url('frequent_changing/js/dataTable/dataTables.bootstrap4.min.js'); ?>"></script>
+    <script src="<?php echo asset_url('frequent_changing/js/dataTable/dataTables.buttons.min.js'); ?>"></script>
+    <script src="<?php echo asset_url('frequent_changing/js/dataTable/buttons.html5.min.js'); ?>"></script>
+    <script src="<?php echo asset_url('frequent_changing/js/dataTable/buttons.print.min.js'); ?>"></script>
+    <script src="<?php echo asset_url('frequent_changing/js/dataTable/jszip.min.js'); ?>"></script>
+    <script src="<?php echo asset_url('frequent_changing/js/dataTable/pdfmake.min.js'); ?>"></script>
+    <script src="<?php echo asset_url('frequent_changing/js/dataTable/vfs_fonts.js'); ?>"></script>
+    <script src="<?php echo asset_url('frequent_changing/newDesign/js/forTable.js'); ?>"></script>
+    <script src="<?php echo asset_url('frequent_changing/js/register_details.js'); ?>"></script>   
+    <script src="<?php echo asset_url('frequent_changing/js/new_ui_design.js'); ?>"></script>   
 </body>
 
 </html>

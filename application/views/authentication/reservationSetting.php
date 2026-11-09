@@ -1,7 +1,7 @@
 <!-- bootstrap datepicker -->
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/datetimepicker/css/bootstrap-datetimepicker.css">
-<script src="<?php echo base_url(); ?>assets/bower_components/datetimepicker/js/moment.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/bower_components/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<link rel="stylesheet" href="<?php echo asset_url('assets/bower_components/datetimepicker/css/bootstrap-datetimepicker.css'); ?>">
+<script src="<?php echo asset_url('assets/bower_components/datetimepicker/js/moment.min.js'); ?>"></script>
+<script src="<?php echo asset_url('assets/bower_components/datetimepicker/js/bootstrap-datetimepicker.min.js'); ?>"></script>
 
 <!-- Main content -->
 <section class="main-content-wrapper">

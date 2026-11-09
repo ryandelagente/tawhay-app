@@ -50,26 +50,26 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title><?php echo escape_output($site_name); ?></title>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>frequent_changing/bar_panel/css/style.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>frequent_changing/bar_panel/css/sweetalert2.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/font-awesome/v5/all.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/select2/dist/css/select2.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>asset/plugins/iCheck/minimal/color-scheme.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/common.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/custom/login.css">
-    <script src="<?php echo base_url()?>frequent_changing/bar_panel/js/jquery-3.3.1.min.js"></script>
-    <script src="<?php echo base_url()?>frequent_changing/js/jquery-ui.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>frequent_changing/bar_panel/js/jquery.slimscroll.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>frequent_changing/bar_panel/js/sweetalert2.all.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/bower_components/select2/dist/js/select2.full.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo asset_url('frequent_changing/bar_panel/css/style.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo asset_url('frequent_changing/bar_panel/css/sweetalert2.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/bower_components/font-awesome/v5/all.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/bower_components/select2/dist/css/select2.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('asset/plugins/iCheck/minimal/color-scheme.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/dist/css/common.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/dist/css/custom/login.css'); ?>">
+    <script src="<?php echo asset_url('frequent_changing/bar_panel/js/jquery-3.3.1.min.js'); ?>"></script>
+    <script src="<?php echo asset_url('frequent_changing/js/jquery-ui.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo asset_url('frequent_changing/bar_panel/js/jquery.slimscroll.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo asset_url('frequent_changing/bar_panel/js/sweetalert2.all.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo asset_url('assets/bower_components/select2/dist/js/select2.full.min.js'); ?>"></script>
     <base data-base="<?php echo base_url(); ?>"></base>
     <base data-collect-vat="<?php echo escape_output($this->session->userdata('collect_vat')); ?>"></base>
     <base data-currency=""></base>
     <base data-role="<?php echo escape_output($this->session->userdata('role')); ?>"></base>
     <!-- Favicon -->
     <link rel="shortcut icon" href="<?php echo escape_output($favicon) ?>" type="image/x-icon">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css-framework/bootstrap-new/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/newDesign/style.css">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/css-framework/bootstrap-new/bootstrap.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/newDesign/style.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/kitchen_panel/css/custom_kitchen_panel.css?v=<?php echo @filemtime(FCPATH."frequent_changing/kitchen_panel/css/custom_kitchen_panel.css"); ?>">
     <style>
         <?php if ($this->session->has_userdata('language')) {
@@ -285,11 +285,11 @@
                 <?php endif;?>
     <?php endif; ?>
     
-    <script src="<?php echo base_url(); ?>assets/css-framework/bootstrap-new/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>frequent_changing/kitchen_panel/js/marquee.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>frequent_changing/kitchen_panel/js/datable.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>frequent_changing/kitchen_panel/js/jquery.cookie.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/POS/js/howler.min.js"></script>
+    <script src="<?php echo asset_url('assets/css-framework/bootstrap-new/bootstrap.bundle.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo asset_url('frequent_changing/kitchen_panel/js/marquee.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo asset_url('frequent_changing/kitchen_panel/js/datable.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo asset_url('frequent_changing/kitchen_panel/js/jquery.cookie.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo asset_url('assets/POS/js/howler.min.js'); ?>"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>frequent_changing/kitchen_panel/js/custom.js?v=<?php echo @filemtime(FCPATH."frequent_changing/kitchen_panel/js/custom.js"); ?>"></script>
     <!-- material icon -->
 

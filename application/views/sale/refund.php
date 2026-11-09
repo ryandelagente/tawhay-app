@@ -7,7 +7,7 @@
 <input type="hidden" id="base_url" value="<?php echo base_url(); ?>">
 <input type="hidden" id="alert" value="<?php echo lang('alert'); ?>">
 <input type="hidden" id="tax_type" value="<?php echo $this->session->userdata("tax_type")?>">
-<link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/add_purchase.css">
+<link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/add_purchase.css'); ?>">
 
 
 <section class="main-content-wrapper">

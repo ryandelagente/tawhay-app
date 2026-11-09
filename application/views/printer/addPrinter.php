@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo base_url() ?>frequent_changing/css/custom_check_box.css">
+<link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/custom_check_box.css'); ?>">
 <input type="hidden" value="<?php echo (isset($_SERVER["HTTPS"]) ? "https://" : "http://")?>" id="ssl_type">
 <section class="main-content-wrapper">
 

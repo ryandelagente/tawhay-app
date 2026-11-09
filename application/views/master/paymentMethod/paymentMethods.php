@@ -24,7 +24,7 @@
         echo '</p></div></div></section>';
     }
     ?>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/up_down.css">
+    <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/up_down.css'); ?>">
 
     <section class="content-header">
         <div class="row">

@@ -1,7 +1,7 @@
 <input type="hidden" class="required_roll_name" value="<?php echo lang('required_roll_name'); ?>">
 <input type="hidden" class="at_least_one_check_access" value="<?php echo lang('at_least_one_check_access'); ?>">
-<link rel="stylesheet" href="<?php echo base_url();?>frequent_changing/css/custom_check_box.css">
-<link rel="stylesheet" href="<?php echo base_url();?>frequent_changing/css/light.css">
+<link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/custom_check_box.css'); ?>">
+<link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/light.css'); ?>">
 <!-- Main content -->
 <section class="main-content-wrapper">
     <section class="content-header">
@@ -125,6 +125,6 @@
 
     </div>
 </section>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/POS/js/lib/tippy/popper.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/POS/js/lib/tippy/tippy-bundle.umd.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/add_role.js"></script>
+<script type="text/javascript" src="<?php echo asset_url('assets/POS/js/lib/tippy/popper.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset_url('assets/POS/js/lib/tippy/tippy-bundle.umd.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/add_role.js'); ?>"></script>

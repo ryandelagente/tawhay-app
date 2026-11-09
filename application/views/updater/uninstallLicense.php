@@ -25,14 +25,14 @@ $getCompanyInfo = getCompanyInfo();
     <!-- Favicon -->
     <link rel="shortcut icon" href="<?php echo base_url(); ?>images/favicon.ico" type="image/x-icon">
     <!-- jQuery 3 -->
-    <script src="<?php echo base_url(); ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="<?php echo asset_url('assets/bower_components/jquery/dist/jquery.min.js'); ?>"></script>
     <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/bower_components/bootstrap/dist/css/bootstrap.min.css'); ?>">
     <!-- custom css load -->
     <?php ($this->view('report/view_report')); ?>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/updater.css">
+    <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/updater.css'); ?>">
     <!-- Bootstrap 3.3.7 -->
-    <script src="<?php echo base_url(); ?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="<?php echo asset_url('assets/bower_components/bootstrap/dist/js/bootstrap.min.js'); ?>"></script>
 </head>
 <body>
 <input type="hidden" value="<?=escape_output($status)?>" id="status_value">
@@ -110,6 +110,6 @@ $getCompanyInfo = getCompanyInfo();
 
     </div>
 </div>
-<script src="<?php echo base_url(); ?>frequent_changing/js/uninstall_license.js"></script>
+<script src="<?php echo asset_url('frequent_changing/js/uninstall_license.js'); ?>"></script>
 </body>
 </html>

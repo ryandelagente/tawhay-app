@@ -20,9 +20,9 @@ $ingredient_id_container .= "]";
 
 let ingredient_id_container = <?php echo escape_output($ingredient_id_container); ?>;
 </script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/add_waste.js"></script>
+<script src="<?php echo asset_url('frequent_changing/js/add_waste.js'); ?>"></script>
 
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/custom/editWaste.css">
+<link rel="stylesheet" href="<?php echo asset_url('assets/dist/css/custom/editWaste.css'); ?>">
 
 
 <section class="main-content-wrapper">

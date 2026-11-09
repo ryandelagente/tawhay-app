@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/custom/report.css">
-<script src="<?php echo base_url(); ?>frequent_changing/js/supplier_report.js"></script>
+<link rel="stylesheet" href="<?php echo asset_url('assets/dist/css/custom/report.css'); ?>">
+<script src="<?php echo asset_url('frequent_changing/js/supplier_report.js'); ?>"></script>
 
 <section class="main-content-wrapper">
 
@@ -146,17 +146,17 @@
 
 </section>
 <!-- DataTables -->
-<script src="<?php echo base_url(); ?>assets/datatable_custom/jquery-3.3.1.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/datatable_custom/dataTables.buttons.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/dataTables.bootstrap4.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/datatable_custom/buttons.flash.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/datatable_custom/jszip.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/datatable_custom/pdfmake.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/datatable_custom/vfs_fonts.js"></script>
-<script src="<?php echo base_url(); ?>assets/datatable_custom/buttons.html5.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/datatable_custom/buttons.print.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/newDesign/js/forTable.js"></script>
+<script src="<?php echo asset_url('assets/datatable_custom/jquery-3.3.1.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/jquery.dataTables.min.js'); ?>"></script>
+<script src="<?php echo asset_url('assets/datatable_custom/dataTables.buttons.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/dataTables.bootstrap4.min.js'); ?>"></script>
+<script src="<?php echo asset_url('assets/datatable_custom/buttons.flash.min.js'); ?>"></script>
+<script src="<?php echo asset_url('assets/datatable_custom/jszip.min.js'); ?>"></script>
+<script src="<?php echo asset_url('assets/datatable_custom/pdfmake.min.js'); ?>"></script>
+<script src="<?php echo asset_url('assets/datatable_custom/vfs_fonts.js'); ?>"></script>
+<script src="<?php echo asset_url('assets/datatable_custom/buttons.html5.min.js'); ?>"></script>
+<script src="<?php echo asset_url('assets/datatable_custom/buttons.print.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/newDesign/js/forTable.js'); ?>"></script>
 
 
-<script src="<?php echo base_url(); ?>frequent_changing/js/custom_report1.js"></script>
+<script src="<?php echo asset_url('frequent_changing/js/custom_report1.js'); ?>"></script>

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/custom/report.css">
+<link rel="stylesheet" href="<?php echo asset_url('assets/dist/css/custom/report.css'); ?>">
 
 <section class="main-content-wrapper">
 

@@ -6,8 +6,8 @@
 <input type="hidden" id="wast_amt" value="<?php echo lang('wast_amt'); ?>">
 <input type="hidden" id="loss_amt" value="<?php echo lang('loss_amt'); ?>">
 
-<script src="<?php echo base_url(); ?>frequent_changing/js/add_waste.js"></script>
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/custom/addWaste.css">
+<script src="<?php echo asset_url('frequent_changing/js/add_waste.js'); ?>"></script>
+<link rel="stylesheet" href="<?php echo asset_url('assets/dist/css/custom/addWaste.css'); ?>">
 
 
 <section class="main-content-wrapper">

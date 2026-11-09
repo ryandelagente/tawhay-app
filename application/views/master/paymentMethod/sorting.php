@@ -12,7 +12,7 @@
         echo '</p></div></div></section>';
     }
     ?>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/up_down.css">
+    <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/up_down.css'); ?>">
 
     <section class="content-header">
         <div class="row">
@@ -71,5 +71,5 @@
     </div>
 
 </section>
-<script src="<?php echo base_url(); ?>assets/dist/js/jquery.dragsort.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/sorting.js"></script>
+<script src="<?php echo asset_url('assets/dist/js/jquery.dragsort.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/sorting.js'); ?>"></script>

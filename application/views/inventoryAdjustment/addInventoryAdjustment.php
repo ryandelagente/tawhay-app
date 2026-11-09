@@ -7,9 +7,9 @@
 <input type="hidden" id="note_field_cannot" value="<?php echo lang('note_field_cannot'); ?>">
 <input type="hidden" id="consumption_ingredients" value="<?php echo isset($consumption_ingredients) && $consumption_ingredients?$consumption_ingredients:0 ?>">
 
-<script src="<?php echo base_url(); ?>frequent_changing/js/inventory_adjustment.js"></script>
+<script src="<?php echo asset_url('frequent_changing/js/inventory_adjustment.js'); ?>"></script>
 
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/custom/addInventoryAdjustment.css">
+<link rel="stylesheet" href="<?php echo asset_url('assets/dist/css/custom/addInventoryAdjustment.css'); ?>">
 
 
 <section class="main-content-wrapper">

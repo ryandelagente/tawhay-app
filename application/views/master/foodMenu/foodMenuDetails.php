@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/add_food_menu.css">
-<link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/variation.css">
+<link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/add_food_menu.css'); ?>">
+<link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/variation.css'); ?>">
 <section class="main-content-wrapper">
     <section class="content-header">
         <h1>

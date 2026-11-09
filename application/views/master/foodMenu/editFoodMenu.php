@@ -30,9 +30,9 @@ $ingredient_id_container .= "]";
 <input type="hidden" id="consumption" value="<?php echo lang('consumption'); ?>">
 <input type="hidden" id="Edit_Variation" value="<?php echo lang('Edit_Variation'); ?>">
 
-<script src="<?php echo base_url(); ?>frequent_changing/js/edit_food_menu.js"></script>
-<link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/add_food_menu.css">
-<link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/variation.css">
+<script src="<?php echo asset_url('frequent_changing/js/edit_food_menu.js'); ?>"></script>
+<link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/add_food_menu.css'); ?>">
+<link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/variation.css'); ?>">
 
 
 <section class="main-content-wrapper">

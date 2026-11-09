@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/custom/report.css">
+<link rel="stylesheet" href="<?php echo asset_url('assets/dist/css/custom/report.css'); ?>">
 <section class="content-header">
     <h3 class="ir_txtCenter_mt0"><?php echo lang('Detailed_Purchase_Report'); ?></h3>
     <hr class="ir_border1">

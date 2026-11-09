@@ -15,7 +15,7 @@
             <?php echo lang('open_register'); ?>
         </h3>
     </section>
-    <link href="<?php echo base_url(); ?>frequent_changing/css/register.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo asset_url('frequent_changing/css/register.css'); ?>" rel="stylesheet" type="text/css" />
 
     <div class="box-wrapper">
             <!-- general form elements -->

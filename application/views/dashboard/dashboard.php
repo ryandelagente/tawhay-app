@@ -1,12 +1,12 @@
 <!-- bootstrap datepicker -->
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/POS/js/jquery.slimscroll.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>frequent_changing/js/jquery.spincrement.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>frequent_changing/js/jquery.spincrement.min.js"></script>
+<script type="text/javascript" src="<?php echo asset_url('assets/POS/js/jquery.slimscroll.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset_url('frequent_changing/js/jquery.spincrement.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset_url('frequent_changing/js/jquery.spincrement.min.js'); ?>"></script>
 
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/custom/dashboard.css">
-<link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/dashboard_button.css">
+<link rel="stylesheet" href="<?php echo asset_url('assets/dist/css/custom/dashboard.css'); ?>">
+<link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/dashboard_button.css'); ?>">
 <!-- Content Header (Page header) -->
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/bower_components/graph/chart.min.js"></script>
+<script type="text/javascript" src="<?php echo asset_url('assets/bower_components/graph/chart.min.js'); ?>"></script>
 <input type="hidden" id="purchase" value="<?php echo lang('purchase'); ?>">
 <input type="hidden" id="sale" value="<?php echo lang('sale'); ?>">
 <input type="hidden" id="waste" value="<?php echo lang('waste'); ?>">
@@ -641,12 +641,12 @@
     </div>
 </section>
 
-<script type="text/javascript" src="<?php echo base_url(); ?>frequent_changing/js/dashboard_chart_custom.js"></script>
+<script type="text/javascript" src="<?php echo asset_url('frequent_changing/js/dashboard_chart_custom.js'); ?>"></script>
 <!-- ChartJS -->
-<script src="<?php echo base_url(); ?>assets/bower_components/chart.js/Chart.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/local/loader.js"></script>
-<script src="<?php echo base_url(); ?>assets/bower_components/raphael/raphael.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/bower_components/morris.js/morris.min.js"></script>
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/morris.js/morris.css">
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/POS/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>frequent_changing/js/dashboard.js"></script>
+<script src="<?php echo asset_url('assets/bower_components/chart.js/Chart.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset_url('assets/plugins/local/loader.js'); ?>"></script>
+<script src="<?php echo asset_url('assets/bower_components/raphael/raphael.min.js'); ?>"></script>
+<script src="<?php echo asset_url('assets/bower_components/morris.js/morris.min.js'); ?>"></script>
+<link rel="stylesheet" href="<?php echo asset_url('assets/bower_components/morris.js/morris.css'); ?>">
+<script type="text/javascript" src="<?php echo asset_url('assets/POS/js/jquery.cookie.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset_url('frequent_changing/js/dashboard.js'); ?>"></script>

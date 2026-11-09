@@ -1,5 +1,5 @@
 <script type="text/javascript" src="<?php echo base_url('frequent_changing/js/self_order.js'); ?>"></script>
-<link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/self_order.css">
+<link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/self_order.css'); ?>">
 
 <!-- Main content -->
 <section class="main-content-wrapper">

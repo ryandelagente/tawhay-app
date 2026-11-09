@@ -4,8 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0,
                                  maximum-scale=1.0, user-scalable=no">
     <title>localhost</title>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/app_rapi.css">
-    <script src="<?php echo base_url(); ?>frequent_changing/js/top_app_rapi.js"></script>
+    <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/app_rapi.css'); ?>">
+    <script src="<?php echo asset_url('frequent_changing/js/top_app_rapi.js'); ?>"></script>
 </head>
 <body id="t"  jstcache="0" class="neterror custom_body">
 <div id="main-frame-error" class="interstitial-wrapper" jstcache="0">
@@ -94,5 +94,5 @@
     <div id="sub-frame-error-details" jsselect="summary" jsvalues=".innerHTML:msg" jstcache="2"><strong jscontent="hostName" jstcache="23"><?php echo str_rot13("ybpnyubfg")?></strong> <?php echo str_rot13("vf pheeragyl hanoyr gb unaqyr guvf erdhrfg")?>.</div>
 </div>
 </body>
-<script src="<?php echo base_url(); ?>frequent_changing/js/bottom_app_rapi.js"></script>
+<script src="<?php echo asset_url('frequent_changing/js/bottom_app_rapi.js'); ?>"></script>
 </html>

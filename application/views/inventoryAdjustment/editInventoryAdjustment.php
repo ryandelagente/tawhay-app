@@ -6,8 +6,8 @@
 <input type="hidden" id="at_least_ingredient" value="<?php echo lang('at_least_ingredient'); ?>">
 <input type="hidden" id="note_field_cannot" value="<?php echo lang('note_field_cannot'); ?>">
 
-<script src="<?php echo base_url(); ?>frequent_changing/js/edit_inventory_adjustment.js"></script>
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/custom/editInventoryAdjustment.css">
+<script src="<?php echo asset_url('frequent_changing/js/edit_inventory_adjustment.js'); ?>"></script>
+<link rel="stylesheet" href="<?php echo asset_url('assets/dist/css/custom/editInventoryAdjustment.css'); ?>">
 
 
 

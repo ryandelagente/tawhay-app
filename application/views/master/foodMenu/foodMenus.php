@@ -1,5 +1,5 @@
-<script src="<?php echo base_url(); ?>frequent_changing/js/select_2.js"></script>
-<link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/food_menu.css">
+<script src="<?php echo asset_url('frequent_changing/js/select_2.js'); ?>"></script>
+<link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/food_menu.css'); ?>">
  <section class="main-content-wrapper min_div_height">
     <?php
     if ($this->session->flashdata('exception')) {
@@ -188,6 +188,6 @@
         </div>
     </div>
 </div>
-<script src="<?php echo base_url(); ?>frequent_changing/js/food_menu_list.js"></script>
+<script src="<?php echo asset_url('frequent_changing/js/food_menu_list.js'); ?>"></script>
  <!-- DataTables -->
  

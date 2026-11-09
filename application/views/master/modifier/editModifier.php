@@ -6,8 +6,8 @@
 <input type="hidden" id="are_you_sure" value="<?php echo lang('are_you_sure'); ?>">
 <input type="hidden" id="consumption" value="<?php echo lang('consumption'); ?>">
 <input type="hidden" id="alert" value="<?php echo lang('alert'); ?>">
-<script src="<?php echo base_url(); ?>frequent_changing/js/edit_modifier.js"></script>
-<link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/add_modifier.css">
+<script src="<?php echo asset_url('frequent_changing/js/edit_modifier.js'); ?>"></script>
+<link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/add_modifier.css'); ?>">
 
 
 <section class="main-content-wrapper">

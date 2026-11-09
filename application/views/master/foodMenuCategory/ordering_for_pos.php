@@ -60,5 +60,5 @@
     </div>
 
 </section>
-<script src="<?php echo base_url(); ?>frequent_changing/js/jquery.dragsort.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/category_sorting.js"></script>
+<script src="<?php echo asset_url('frequent_changing/js/jquery.dragsort.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/category_sorting.js'); ?>"></script>

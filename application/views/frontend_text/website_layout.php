@@ -87,41 +87,41 @@ $language = $this->session->userdata('language');
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo escape_output($site_name); ?></title>
 
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/website/css/plugins/bootstrap.min.css">
-  <script src="<?php echo base_url(); ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="<?php echo asset_url('assets/website/css/plugins/bootstrap.min.css'); ?>">
+  <script src="<?php echo asset_url('assets/bower_components/jquery/dist/jquery.min.js'); ?>"></script>
   <!-- Vendor Stylesheets -->
-  <script src="<?php echo base_url() ?>assets/website/js/plugins/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/website/css/plugins/animate.min.css">
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/website/css/plugins/magnific-popup.css">
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/website/css/plugins/slick.css">
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/website/css/plugins/slick-theme.css">
+  <script src="<?php echo asset_url('assets/website/js/plugins/bootstrap.min.js'); ?>"></script>
+  <link rel="stylesheet" href="<?php echo asset_url('assets/website/css/plugins/animate.min.css'); ?>">
+  <link rel="stylesheet" href="<?php echo asset_url('assets/website/css/plugins/magnific-popup.css'); ?>">
+  <link rel="stylesheet" href="<?php echo asset_url('assets/website/css/plugins/slick.css'); ?>">
+  <link rel="stylesheet" href="<?php echo asset_url('assets/website/css/plugins/slick-theme.css'); ?>">
   <!-- Icon Fonts -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/website/fonts/flaticon/flaticon.css">
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/website/fonts/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="<?php echo asset_url('assets/website/fonts/flaticon/flaticon.css'); ?>">
+  <link rel="stylesheet" href="<?php echo asset_url('assets/website/fonts/font-awesome/css/all.min.css'); ?>">
   <!-- Owl Carousel -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/owl-carousel/css/owl.carousel.min.css">
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/owl-carousel/css/owl.theme.default.css">
+  <link rel="stylesheet" href="<?php echo asset_url('assets/owl-carousel/css/owl.carousel.min.css'); ?>">
+  <link rel="stylesheet" href="<?php echo asset_url('assets/owl-carousel/css/owl.theme.default.css'); ?>">
   <!-- Owl Carousel -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/website/css/nice-select2.css">
+  <link rel="stylesheet" href="<?php echo asset_url('assets/website/css/nice-select2.css'); ?>">
   <!-- Page Specific Styles -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/website/css/plugins/leaflet.css">
+  <link rel="stylesheet" href="<?php echo asset_url('assets/website/css/plugins/leaflet.css'); ?>">
 
-  <script src="<?php echo base_url(); ?>frequent_changing/notify/toastr.js"></script>
-  <link href="<?php echo base_url(); ?>frequent_changing/notify/toastr.css" rel="stylesheet" type="text/css" />
+  <script src="<?php echo asset_url('frequent_changing/notify/toastr.js'); ?>"></script>
+  <link href="<?php echo asset_url('frequent_changing/notify/toastr.css'); ?>" rel="stylesheet" type="text/css" />
   <!-- Slices Style sheet -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/website/css/style.css">
+  <link rel="stylesheet" href="<?php echo asset_url('assets/website/css/style.css'); ?>">
   <!-- New Style Css -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>frequent_changing/frontend/style.css">
+  <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/frontend/style.css'); ?>">
   <!-- RTL Styles -->
   <?php
   if (isset($language) && $language == "arabic") {
   ?>
-    <link rel="stylesheet" href="<?php echo base_url() ?>frequent_changing/frontend/rtl.css">
+    <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/frontend/rtl.css'); ?>">
   <?php
   }
   ?>
   <!-- Responsive Css -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>frequent_changing/frontend/responsive.css">
+  <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/frontend/responsive.css'); ?>">
   <!-- Favicon -->
   <link rel="icon" href="<?php echo escape_output($favicon) ?>" type="image/x-icon">
 
@@ -299,25 +299,25 @@ $language = $this->session->userdata('language');
   ?>
 
   <!-- Vendor Scripts -->
-  <script src="<?php echo base_url() ?>assets/website/js/plugins/popper.min.js"></script>
-  <script src="<?php echo base_url() ?>assets/website/js/plugins/waypoint.js"></script>
+  <script src="<?php echo asset_url('assets/website/js/plugins/popper.min.js'); ?>"></script>
+  <script src="<?php echo asset_url('assets/website/js/plugins/waypoint.js'); ?>"></script>
 
-  <script src="<?php echo base_url() ?>assets/website/js/plugins/jquery.magnific-popup.min.js"></script>
-  <script src="<?php echo base_url() ?>assets/website/js/plugins/jquery.slimScroll.min.js"></script>
-  <script src="<?php echo base_url() ?>assets/website/js/plugins/imagesloaded.min.js"></script>
-  <script src="<?php echo base_url() ?>assets/website/js/plugins/jquery.steps.min.js"></script>
-  <script src="<?php echo base_url() ?>assets/website/js/plugins/jquery.countdown.min.js"></script>
-  <script src="<?php echo base_url() ?>assets/website/js/plugins/isotope.pkgd.min.js"></script>
-  <script src="<?php echo base_url() ?>assets/website/js/plugins/slick.min.js"></script>
-  <script src="<?php echo base_url() ?>assets/owl-carousel/js/owl.carousel.min.js"></script>
-  <script src="<?php echo base_url() ?>assets/website/js/nice-select2.js"></script>
+  <script src="<?php echo asset_url('assets/website/js/plugins/jquery.magnific-popup.min.js'); ?>"></script>
+  <script src="<?php echo asset_url('assets/website/js/plugins/jquery.slimScroll.min.js'); ?>"></script>
+  <script src="<?php echo asset_url('assets/website/js/plugins/imagesloaded.min.js'); ?>"></script>
+  <script src="<?php echo asset_url('assets/website/js/plugins/jquery.steps.min.js'); ?>"></script>
+  <script src="<?php echo asset_url('assets/website/js/plugins/jquery.countdown.min.js'); ?>"></script>
+  <script src="<?php echo asset_url('assets/website/js/plugins/isotope.pkgd.min.js'); ?>"></script>
+  <script src="<?php echo asset_url('assets/website/js/plugins/slick.min.js'); ?>"></script>
+  <script src="<?php echo asset_url('assets/owl-carousel/js/owl.carousel.min.js'); ?>"></script>
+  <script src="<?php echo asset_url('assets/website/js/nice-select2.js'); ?>"></script>
 
   <!-- Slices Scripts -->
-  <script src="<?php echo base_url() ?>assets/website/js/main.js"></script>
+  <script src="<?php echo asset_url('assets/website/js/main.js'); ?>"></script>
 
   <!-- Page Specific Scripts -->
-  <script src="<?php echo base_url() ?>assets/website/js/plugins/leaflet.js"></script>
-  <script src="<?php echo base_url() ?>assets/website/js/order.js?v=1.2"></script>
+  <script src="<?php echo asset_url('assets/website/js/plugins/leaflet.js'); ?>"></script>
+  <script src="<?php echo asset_url('assets/website/js/order.js'); ?>"></script>
 
   <!-- Checkout End -->
   <script>
@@ -326,7 +326,7 @@ $language = $this->session->userdata('language');
     /*This variable could not be escaped because this is building object*/
     window.only_modifiers = [<?php echo ($javascript_obects_only_modifier); ?>];
   </script>
-  <script src="<?php echo base_url(); ?>frequent_changing/js/demo-cta.js"></script>
+  <script src="<?php echo asset_url('frequent_changing/js/demo-cta.js'); ?>"></script>
 </body>
 
 </html>

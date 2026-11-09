@@ -268,4 +268,4 @@
         </div>
     </div>
 </section>
-<script src="<?php echo base_url(); ?>frequent_changing/js/add_outlet.js"></script>
+<script src="<?php echo asset_url('frequent_changing/js/add_outlet.js'); ?>"></script>

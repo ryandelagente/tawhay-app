@@ -25,8 +25,8 @@ foreach (getFoodMenuForMenuPage() as $menu_item) {
 }
 $menu_booklet = 'uploads/website/tawhay-menu-booklet.pdf';
 ?>
-  <script src="<?php echo base_url(); ?>assets/website/magnific/jquery.magnific-popup.min.js"></script>
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/website/magnific/magnific-popup.css">
+  <script src="<?php echo asset_url('assets/website/magnific/jquery.magnific-popup.min.js'); ?>"></script>
+  <link rel="stylesheet" href="<?php echo asset_url('assets/website/magnific/magnific-popup.css'); ?>">
  
 
 <!-- About us start -->

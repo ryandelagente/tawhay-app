@@ -3,7 +3,7 @@ $company_info = getMainCompany();
 $common_menu_page = isset($company_info->common_menu_page) && $company_info->common_menu_page?json_decode($company_info->common_menu_page):'';
  
 ?>
-  <link rel="stylesheet" href="<?php echo base_url()?>frequent_changing/css/stripe_online_order.css">
+  <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/stripe_online_order.css'); ?>">
 <!-- Subheader Start -->
 <div class="subheader dark-overlay dark-overlay-2" style="background-image: url('<?php echo base_url() ?>uploads/common_menu_page/<?php echo isset($common_menu_page->common_menu_page_banner) && $common_menu_page->common_menu_page_banner ? $common_menu_page->common_menu_page_banner : '' ?>')">
     <div class="container">
@@ -89,4 +89,4 @@ $common_menu_page = isset($company_info->common_menu_page) && $company_info->com
     let share_key = "<?php echo escape_output($stripe_publishable_key)?>";
 </script>
 
-<script src="<?php echo base_url()?>frequent_changing/js/stripe_online_order.js"></script>
+<script src="<?php echo asset_url('frequent_changing/js/stripe_online_order.js'); ?>"></script>

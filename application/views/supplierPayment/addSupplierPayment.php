@@ -1,4 +1,4 @@
-<script type="text/javascript" src="<?php echo base_url(); ?>frequent_changing/js/add_supplier_payment.js"></script>
+<script type="text/javascript" src="<?php echo asset_url('frequent_changing/js/add_supplier_payment.js'); ?>"></script>
 
 <!-- Main content -->
 <section class="main-content-wrapper">

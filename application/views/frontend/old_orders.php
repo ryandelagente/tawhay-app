@@ -13,8 +13,8 @@ $common_menu_page = isset($company_info->common_menu_page) && $company_info->com
 $current_page = isset($_GET['page']) && $_GET['page']?$_GET['page']:0;
 ?>
  <!-- Sweet alert -->
- <script src="<?php echo base_url(); ?>assets/POS/sweetalert2/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/POS/sweetalert2/dist/sweetalert.min.css">
+ <script src="<?php echo asset_url('assets/POS/sweetalert2/dist/sweetalert.min.js'); ?>"></script>
+    <link rel="stylesheet" href="<?php echo asset_url('assets/POS/sweetalert2/dist/sweetalert.min.css'); ?>">
 <!-- Menu Wrapper Start -->
 <div class="section old_order_section">
   <div class="container">

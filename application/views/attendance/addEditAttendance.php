@@ -1,5 +1,5 @@
-<script src="<?php echo base_url(); ?>assets/plugins/local/jquery.timepicker.min.js"></script>
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/local/jquery.timepicker.min.css">
+<script src="<?php echo asset_url('assets/plugins/local/jquery.timepicker.min.js'); ?>"></script>
+<link rel="stylesheet" href="<?php echo asset_url('assets/plugins/local/jquery.timepicker.min.css'); ?>">
 <script>
     $(function() {
         "use strict";

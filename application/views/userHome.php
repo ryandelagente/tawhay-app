@@ -47,47 +47,47 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- jQuery 3.7 -->
-    <script src="<?php echo base_url(); ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/newDesign/lib/currency-flags/dist/currency-flags.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/custom_css.css">
+    <script src="<?php echo asset_url('assets/bower_components/jquery/dist/jquery.min.js'); ?>"></script>
+    <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/newDesign/lib/currency-flags/dist/currency-flags.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/custom_css.css'); ?>">
     <!-- Sweet alert -->
-    <script src="<?php echo base_url(); ?>assets/POS/sweetalert2/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/POS/sweetalert2/dist/sweetalert.min.css">
+    <script src="<?php echo asset_url('assets/POS/sweetalert2/dist/sweetalert.min.js'); ?>"></script>
+    <link rel="stylesheet" href="<?php echo asset_url('assets/POS/sweetalert2/dist/sweetalert.min.css'); ?>">
     <!-- Numpad -->
-    <script src="<?php echo base_url(); ?>assets/bower_components/numpad/jquery.numpad.js"></script>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/numpad/jquery.numpad.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/numpad/theme.css">
+    <script src="<?php echo asset_url('assets/bower_components/numpad/jquery.numpad.js'); ?>"></script>
+    <link rel="stylesheet" href="<?php echo asset_url('assets/bower_components/numpad/jquery.numpad.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/bower_components/numpad/theme.css'); ?>">
     <!--datepicker-->
     <!-- bootstrap datepicker -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/datepicker/datepicker.css">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/bower_components/datepicker/datepicker.css'); ?>">
     <!-- bootstrap datepicker -->
-    <script src="<?php echo base_url(); ?>assets/bower_components/datepicker/bootstrap-datepicker.js"></script>
+    <script src="<?php echo asset_url('assets/bower_components/datepicker/bootstrap-datepicker.js'); ?>"></script>
     <!-- Select2 -->
-    <script src="<?php echo base_url(); ?>assets/bower_components/select2/dist/js/select2.full.min.js"></script>
+    <script src="<?php echo asset_url('assets/bower_components/select2/dist/js/select2.full.min.js'); ?>"></script>
     <!-- Select2 -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/select2/dist/css/select2.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css-framework/bootstrap-new/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/bower_components/select2/dist/css/select2.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/css-framework/bootstrap-new/bootstrap.min.css'); ?>">
     <!-- New Admin Panel Design -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/newDesign/style.css">
+    <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/newDesign/style.css'); ?>">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/fontawesome-free-6.5.1-web/css/all.min.css?var=1.6">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/jquery.mCustomScrollbar.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/perfect-scrollbar/dist/perfect-scrollbar.css">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/dist/css/jquery.mCustomScrollbar.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/plugins/perfect-scrollbar/dist/perfect-scrollbar.css'); ?>">
     <!-- Favicon -->
     <link rel="shortcut icon" href="<?php echo escape_output($favicon) ?>" type="image/x-icon">
     <!-- Theme style -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/AdminLTE.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/custom/userHome.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/common.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/nice-select/css/nice-select.css">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/dist/css/AdminLTE.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/dist/css/custom/userHome.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/dist/css/common.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/plugins/nice-select/css/nice-select.css'); ?>">
     <!-- Slick Slidear CSS -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/slick-slider/slick.css">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/plugins/slick-slider/slick.css'); ?>">
     <!-- Google Font -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/local/google_font.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/custom_tooltip.css">
-    <script src="<?php echo base_url(); ?>frequent_changing/js/user_home.js"></script>
+    <link rel="stylesheet" href="<?php echo asset_url('assets/plugins/local/google_font.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/custom_tooltip.css'); ?>">
+    <script src="<?php echo asset_url('frequent_changing/js/user_home.js'); ?>"></script>
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/userHomeResponsive.css">
+    <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/userHomeResponsive.css'); ?>">
 
     <style>
         .main-sidebar .sidebar-menu li.treeview > .treeview-menu .treeMenuActive a, .main-sidebar2 .sidebar-menu li.treeview > .treeview-menu .treeMenuActive a {
@@ -1088,31 +1088,31 @@ endif;
         window.menu_objects = [<?php echo ($menu_objects);?>];
     </script>
     <!-- Bootstrap 5.0.0 -->
-    <script src="<?php echo base_url(); ?>assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/css-framework/bootstrap-new/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo asset_url('assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js'); ?>"></script>
+    <script src="<?php echo asset_url('assets/css-framework/bootstrap-new/bootstrap.bundle.min.js'); ?>"></script>
 
     <!-- FastClick -->
-    <script src="<?php echo base_url(); ?>assets/bower_components/fastclick/lib/fastclick.js"></script>
-    <script src="<?php echo base_url(); ?>assets/plugins/nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="<?php echo asset_url('assets/bower_components/fastclick/lib/fastclick.js'); ?>"></script>
+    <script src="<?php echo asset_url('assets/plugins/nice-select/js/jquery.nice-select.min.js'); ?>"></script>
     <!-- AdminLTE App -->
-    <script src="<?php echo base_url(); ?>assets/plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+    <script src="<?php echo asset_url('assets/plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js'); ?>"></script>
 
-    <script src="<?php echo base_url(); ?>assets/dist/js/adminlte.min.js"></script>
+    <script src="<?php echo asset_url('assets/dist/js/adminlte.min.js'); ?>"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="<?php echo base_url(); ?>assets/dist/js/demo.js"></script>
-    <script src="<?php echo base_url(); ?>assets/dist/js/menu.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/POS/js/jquery.cookie.js"></script>
+    <script src="<?php echo asset_url('assets/dist/js/demo.js'); ?>"></script>
+    <script src="<?php echo asset_url('assets/dist/js/menu.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo asset_url('assets/POS/js/jquery.cookie.js'); ?>"></script>
     <!-- custom scrollbar plugin -->
-    <script src="<?php echo base_url(); ?>assets/dist/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="<?php echo asset_url('assets/dist/js/jquery.mCustomScrollbar.concat.min.js'); ?>"></script>
     <!-- material icon -->
-    <script src="<?php echo base_url(); ?>assets/dist/js/feather.min.js"></script>
-    <script src="<?php echo base_url(); ?>frequent_changing/js/user_home_buttom.js"></script>
-    <script src="<?php echo base_url(); ?>frequent_changing/js/media.js"></script>
-    <script src="<?php echo base_url(); ?>frequent_changing/newDesign/js/new-script.js"></script>
-    <script src="<?php echo base_url(); ?>assets/plugins/slick-slider/slick.min.js"></script>
-    <script src="<?php echo base_url(); ?>frequent_changing/js/new_ui_design.js"></script>
+    <script src="<?php echo asset_url('assets/dist/js/feather.min.js'); ?>"></script>
+    <script src="<?php echo asset_url('frequent_changing/js/user_home_buttom.js'); ?>"></script>
+    <script src="<?php echo asset_url('frequent_changing/js/media.js'); ?>"></script>
+    <script src="<?php echo asset_url('frequent_changing/newDesign/js/new-script.js'); ?>"></script>
+    <script src="<?php echo asset_url('assets/plugins/slick-slider/slick.min.js'); ?>"></script>
+    <script src="<?php echo asset_url('frequent_changing/js/new_ui_design.js'); ?>"></script>
     <script>window.APPLICATION_MODE = '<?php echo (defined("APPLICATION_MODE") ? APPLICATION_MODE : "live"); ?>';</script>
-    <script src="<?php echo base_url(); ?>frequent_changing/js/demo-cta.js"></script>
+    <script src="<?php echo asset_url('frequent_changing/js/demo-cta.js'); ?>"></script>
 </body>
 
 </html>

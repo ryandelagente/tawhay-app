@@ -4,13 +4,13 @@
 <head>
     <meta charset="utf-8">
     <title><?php echo lang('Invoice_No'); ?>: <?php echo escape_output($sale_object->sale_no); ?></title>
-    <script src="<?php echo base_url(); ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="<?php echo asset_url('assets/bower_components/jquery/dist/jquery.min.js'); ?>"></script>
+    <link rel="stylesheet" href="<?php echo asset_url('assets/bower_components/bootstrap/dist/css/bootstrap.min.css'); ?>">
     <link rel="stylesheet"
-        href="<?php echo base_url(); ?>assets/bower_components/font-awesome/css/font-awesome.min.css">
-    <script src="<?php echo base_url(); ?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/custom/size_56mm.css" media="all">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/custom/print_bill.css" media="all">
+        href="<?php echo asset_url('assets/bower_components/font-awesome/css/font-awesome.min.css'); ?>">
+    <script src="<?php echo asset_url('assets/bower_components/bootstrap/dist/js/bootstrap.min.js'); ?>"></script>
+    <link rel="stylesheet" href="<?php echo asset_url('assets/dist/css/custom/size_56mm.css'); ?>" media="all">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/dist/css/custom/print_bill.css'); ?>" media="all">
 </head>
 
 <body>
@@ -379,8 +379,8 @@
             <div class="ir_clear"></div>
         </div>
     </div>
-    <script src="<?php echo base_url(); ?>assets/dist/js/print/jquery-2.0.3.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/dist/js/print/custom.js"></script>
+    <script src="<?php echo asset_url('assets/dist/js/print/jquery-2.0.3.min.js'); ?>"></script>
+    <script src="<?php echo asset_url('assets/dist/js/print/custom.js'); ?>"></script>
 </body>
 
 </html>

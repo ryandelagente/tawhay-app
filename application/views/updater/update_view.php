@@ -24,10 +24,10 @@ $getCompanyInfo = getCompanyInfo();
 <link rel="shortcut icon" href="<?php echo base_url(); ?>images/favicon.ico" type="image/x-icon">
 
     <!-- jQuery 3 -->
-    <script src="<?php echo base_url(); ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/bower_components/jquery-ui/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/jquery-ui/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/updater.css">
+    <script src="<?php echo asset_url('assets/bower_components/jquery/dist/jquery.min.js'); ?>"></script>
+    <script src="<?php echo asset_url('assets/bower_components/jquery-ui/jquery-ui.min.js'); ?>"></script>
+    <link rel="stylesheet" href="<?php echo asset_url('assets/bower_components/jquery-ui/themes/base/jquery-ui.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/updater.css'); ?>">
 </head>
 
 <body>
@@ -60,5 +60,5 @@ $getCompanyInfo = getCompanyInfo();
 
 </body>
 
-<script src="<?php echo base_url(); ?>frequent_changing/js/updater.js"></script>
+<script src="<?php echo asset_url('frequent_changing/js/updater.js'); ?>"></script>
 </html>

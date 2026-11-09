@@ -1,4 +1,4 @@
-<script src="<?php echo base_url()?>frequent_changing/js/customer_due_receive.js"></script>
+<script src="<?php echo asset_url('frequent_changing/js/customer_due_receive.js'); ?>"></script>
 <input type="hidden" value="<?php echo lang('current_due'); ?>" id="current_due">
 
 

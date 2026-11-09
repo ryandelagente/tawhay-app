@@ -5946,3 +5946,14 @@ function merge_multiple_pos_orders(array $orders): array
         }
         return $chargeAmount;
     }
+
+if (!function_exists('asset_url')) {
+    /**
+     * URL of a local CSS/JS file with its modified time appended, so browsers and
+     * Cloudflare fetch the new copy as soon as the file changes
+     */
+    function asset_url($path) {
+        $file = FCPATH . $path;
+        return base_url() . $path . (is_file($file) ? '?v=' . filemtime($file) : '');
+    }
+}

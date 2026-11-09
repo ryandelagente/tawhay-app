@@ -1,5 +1,5 @@
-<script src="<?php echo base_url(); ?>assets/plugins/barcode/JsBarcode.all.js"></script>
-<link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/inline_priority.css">
+<script src="<?php echo asset_url('assets/plugins/barcode/JsBarcode.all.js'); ?>"></script>
+<link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/inline_priority.css'); ?>">
 <section class="main-content-wrapper">
     <div class="box-wrapper">
         <div class="table-box">
@@ -63,4 +63,4 @@
     </div>
         
 </section>
-<script src="<?php echo base_url(); ?>frequent_changing/js/barcode_preview.js"></script>
+<script src="<?php echo asset_url('frequent_changing/js/barcode_preview.js'); ?>"></script>

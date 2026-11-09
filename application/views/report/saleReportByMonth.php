@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/custom/foodMenuSales.css">
+<link rel="stylesheet" href="<?php echo asset_url('assets/dist/css/custom/foodMenuSales.css'); ?>">
 
 <section class="content-header">
     <h3 class="ir_txtCenter_mt0"><?php echo lang('Monthly_Sale_Report'); ?></h3>

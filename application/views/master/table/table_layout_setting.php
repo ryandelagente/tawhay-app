@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="<?php echo base_url()?>frequent_changing/table_design/custom.css">
-<link href="<?php echo base_url(); ?>frequent_changing/notify/toastr.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="<?php echo asset_url('frequent_changing/table_design/custom.css'); ?>">
+<link href="<?php echo asset_url('frequent_changing/notify/toastr.css'); ?>" rel="stylesheet" type="text/css" />
 
 <input type="hidden" id="please_select_area" value="<?php echo lang('please_select_area')?>">
 <input type="hidden" id="table_layout_added_msg" value="<?php echo lang('table_layout_added_msg')?>">
@@ -139,35 +139,35 @@
     </div>
     
   
-<link rel="stylesheet" href="<?php echo base_url()?>frequent_changing/table_design/custom_card_design_zak.css">
-<link rel="stylesheet" href="<?php echo base_url()?>frequent_changing/table_design/jquery-ui.css">
-<link rel="stylesheet" href="<?php echo base_url()?>frequent_changing/table_design/jquery-ui.structure.css">
-<script src="<?php echo base_url()?>frequent_changing/table_design/jquery-ui.js"></script>
-<link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
-<script src="<?php echo base_url()?>assets/bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
-<script src="<?php echo base_url()?>frequent_changing/table_design/color_picker.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/notify/toastr.js"></script>
+<link rel="stylesheet" href="<?php echo asset_url('frequent_changing/table_design/custom_card_design_zak.css'); ?>">
+<link rel="stylesheet" href="<?php echo asset_url('frequent_changing/table_design/jquery-ui.css'); ?>">
+<link rel="stylesheet" href="<?php echo asset_url('frequent_changing/table_design/jquery-ui.structure.css'); ?>">
+<script src="<?php echo asset_url('frequent_changing/table_design/jquery-ui.js'); ?>"></script>
+<link rel="stylesheet" href="<?php echo asset_url('assets/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css'); ?>">
+<script src="<?php echo asset_url('assets/bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/table_design/color_picker.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/notify/toastr.js'); ?>"></script>
 
-<script type="text/javascript" src="<?php echo base_url()?>assets/plugins/draw/lib/jquery.1.10.2.min.js"></script>
+<script type="text/javascript" src="<?php echo asset_url('assets/plugins/draw/lib/jquery.1.10.2.min.js'); ?>"></script>
  <!-- jQuery UI -->
-<script type="text/javascript" src="<?php echo base_url()?>assets/plugins/draw/lib/jquery.ui.core.1.10.3.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url()?>assets/plugins/draw/lib/jquery.ui.widget.1.10.3.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url()?>assets/plugins/draw/lib/jquery.ui.mouse.1.10.3.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url()?>assets/plugins/draw/lib/jquery.ui.draggable.1.10.3.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/bower_components/crop/croppie.js"></script>
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/crop/croppie.css">
+<script type="text/javascript" src="<?php echo asset_url('assets/plugins/draw/lib/jquery.ui.core.1.10.3.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset_url('assets/plugins/draw/lib/jquery.ui.widget.1.10.3.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset_url('assets/plugins/draw/lib/jquery.ui.mouse.1.10.3.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset_url('assets/plugins/draw/lib/jquery.ui.draggable.1.10.3.min.js'); ?>"></script>
+<script src="<?php echo asset_url('assets/bower_components/crop/croppie.js'); ?>"></script>
+<link rel="stylesheet" href="<?php echo asset_url('assets/bower_components/crop/croppie.css'); ?>">
 
 <!-- wColorPicker -->
-<link rel="Stylesheet" type="text/css" href="<?php echo base_url()?>assets/plugins/draw/lib/wColorPicker.min.css" />
-<script type="text/javascript" src="<?php echo base_url()?>assets/plugins/draw/lib/wColorPicker.min.js"></script>
+<link rel="Stylesheet" type="text/css" href="<?php echo asset_url('assets/plugins/draw/lib/wColorPicker.min.css'); ?>" />
+<script type="text/javascript" src="<?php echo asset_url('assets/plugins/draw/lib/wColorPicker.min.js'); ?>"></script>
 
 <!-- wPaint -->
-<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/plugins/draw/wPaint.min.css" />
-<script type="text/javascript" src="<?php echo base_url()?>assets/plugins/draw/wPaint.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url()?>assets/plugins/draw/plugins/main/wPaint.menu.main.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url()?>assets/plugins/draw/plugins/text/wPaint.menu.text.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url()?>assets/plugins/draw/plugins/shapes/wPaint.menu.main.shapes.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url()?>assets/plugins/draw/plugins/file/wPaint.menu.main.file.min.js"></script>
-<script src="<?php echo base_url()?>frequent_changing/table_design/custom.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo asset_url('assets/plugins/draw/wPaint.min.css'); ?>" />
+<script type="text/javascript" src="<?php echo asset_url('assets/plugins/draw/wPaint.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset_url('assets/plugins/draw/plugins/main/wPaint.menu.main.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset_url('assets/plugins/draw/plugins/text/wPaint.menu.text.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset_url('assets/plugins/draw/plugins/shapes/wPaint.menu.main.shapes.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset_url('assets/plugins/draw/plugins/file/wPaint.menu.main.file.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/table_design/custom.js'); ?>"></script>
 
 

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo base_url();?>frequent_changing/css/custom_check_box.css">
+<link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/custom_check_box.css'); ?>">
 <section class="main-content-wrapper">
 <?php
 if ($this->session->flashdata('exception')) {
@@ -120,14 +120,14 @@ if ($this->session->flashdata('exception')) {
      
  </section>
  <!-- DataTables -->
- <script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/dataTables.bootstrap4.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/dataTables.buttons.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/buttons.html5.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/buttons.print.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/jszip.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/pdfmake.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/vfs_fonts.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/newDesign/js/forTable.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/foodmenubarcode.js"></script>
+ <script src="<?php echo asset_url('frequent_changing/js/dataTable/jquery.dataTables.min.js'); ?>"></script>
+<script src="<?php echo asset_url('assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/dataTables.bootstrap4.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/dataTables.buttons.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/buttons.html5.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/buttons.print.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/jszip.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/pdfmake.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/vfs_fonts.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/newDesign/js/forTable.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/foodmenubarcode.js'); ?>"></script>

@@ -32,23 +32,23 @@ $company = getMainCompany();
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    <script src="<?php echo base_url(); ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="<?php echo asset_url('assets/bower_components/jquery/dist/jquery.min.js'); ?>"></script>
     <link rel="stylesheet"
-          href="<?php echo base_url(); ?>assets/bower_components/font-awesome/css/font-awesome.min.css">
+          href="<?php echo asset_url('assets/bower_components/font-awesome/css/font-awesome.min.css'); ?>">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/bower_components/Ionicons/css/ionicons.min.css'); ?>">
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/bootstrap.min.css'); ?>">
     <!-- Latest compiled and minified JavaScript -->
-    <script src="<?php echo base_url(); ?>frequent_changing/js/bootstrap.min.js"></script>
+    <script src="<?php echo asset_url('frequent_changing/js/bootstrap.min.js'); ?>"></script>
     
-    <script src="<?php echo base_url(); ?>assets/pin_login/dist/jquery.pinlogin.min.js"></script>
-    <link href="<?php echo base_url(); ?>assets/pin_login/src/jquery.pinlogin.css" rel="stylesheet" type="text/css" />
+    <script src="<?php echo asset_url('assets/pin_login/dist/jquery.pinlogin.min.js'); ?>"></script>
+    <link href="<?php echo asset_url('assets/pin_login/src/jquery.pinlogin.css'); ?>" rel="stylesheet" type="text/css" />
     
-    <script src="<?php echo base_url(); ?>frequent_changing/js/login.js?v=1.1"></script>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/login_new.css">
+    <script src="<?php echo asset_url('frequent_changing/js/login.js'); ?>"></script>
+    <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/login_new.css'); ?>">
     <link rel="icon" href="<?php echo escape_output($favicon) ?>" type="image/x-icon">
-    <link href="<?php echo base_url(); ?>frequent_changing/notify/toastr.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo asset_url('frequent_changing/notify/toastr.css'); ?>" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div class="container">
@@ -196,8 +196,8 @@ $company = getMainCompany();
         </div>
     </div>
 </div>
-<script src="<?php echo base_url(); ?>frequent_changing/notify/toastr.js"></script>
+<script src="<?php echo asset_url('frequent_changing/notify/toastr.js'); ?>"></script>
 <script>window.APPLICATION_MODE = '<?php echo (defined("APPLICATION_MODE") ? APPLICATION_MODE : "live"); ?>';</script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/demo-cta.js"></script>
+<script src="<?php echo asset_url('frequent_changing/js/demo-cta.js'); ?>"></script>
 </body>
 </html>

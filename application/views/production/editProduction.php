@@ -7,7 +7,7 @@
 <input type="hidden" id="are_you_sure" value="<?php echo lang('are_you_sure'); ?>">
 <input type="hidden" id="base_url" value="<?php echo base_url(); ?>">
 <input type="hidden" id="alert" value="<?php echo lang('alert'); ?>">
-<link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/add_purchase.css">
+<link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/add_purchase.css'); ?>">
 <script type="text/javascript" src="<?php echo base_url('frequent_changing/supplier.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('frequent_changing/js/edit_production.js'); ?>"></script>
 

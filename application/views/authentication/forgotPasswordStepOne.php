@@ -24,19 +24,19 @@ if($wl){
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    <script src="<?php echo base_url(); ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="<?php echo asset_url('assets/bower_components/jquery/dist/jquery.min.js'); ?>"></script>
     <link rel="stylesheet"
-          href="<?php echo base_url(); ?>assets/bower_components/font-awesome/css/font-awesome.min.css">
+          href="<?php echo asset_url('assets/bower_components/font-awesome/css/font-awesome.min.css'); ?>">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/bower_components/Ionicons/css/ionicons.min.css'); ?>">
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/bootstrap.min.css'); ?>">
     <!-- Latest compiled and minified JavaScript -->
-    <script src="<?php echo base_url(); ?>frequent_changing/js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url(); ?>frequent_changing/js/login.js"></script>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/kitchen_panel/css/custom_kitchen_panel.css">
+    <script src="<?php echo asset_url('frequent_changing/js/bootstrap.min.js'); ?>"></script>
+    <script src="<?php echo asset_url('frequent_changing/js/login.js'); ?>"></script>
+    <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/kitchen_panel/css/custom_kitchen_panel.css'); ?>">
 
-    <link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/login_new.css">
+    <link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/login_new.css'); ?>">
     <link rel="icon" href="<?php echo base_url(); ?>images/favicon.ico" type="image/x-icon">
 </head>
 <body>

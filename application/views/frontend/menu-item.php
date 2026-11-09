@@ -255,4 +255,4 @@
   /*This variable could not be escaped because this is building object*/
   window.only_modifiers = [<?php echo($javascript_obects_only_modifier); ?>];
 </script>
-<script src="<?php echo base_url() ?>assets/website/js/variation.js"></script>
+<script src="<?php echo asset_url('assets/website/js/variation.js'); ?>"></script>

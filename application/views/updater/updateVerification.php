@@ -100,4 +100,4 @@
         </div>
     </div>
 </section>
-<script src="<?php echo base_url(); ?>frequent_changing/js/update_verification.js"></script>
+<script src="<?php echo asset_url('frequent_changing/js/update_verification.js'); ?>"></script>

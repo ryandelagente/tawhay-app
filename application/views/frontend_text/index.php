@@ -6,8 +6,8 @@ $service_section       = isset($company_info->service_section) && $company_info-
 $banner_section       = isset($company_info->main_banner_section) && $company_info->main_banner_section ? json_decode($company_info->main_banner_section) : '';
 $explore_menu_section = isset($company_info->explore_menu_section) && $company_info->explore_menu_section ? json_decode($company_info->explore_menu_section) : '';
 ?>
-  <script src="<?php echo base_url(); ?>assets/website/magnific/jquery.magnific-popup.min.js"></script>
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/website/magnific/magnific-popup.css">
+  <script src="<?php echo asset_url('assets/website/magnific/jquery.magnific-popup.min.js'); ?>"></script>
+  <link rel="stylesheet" href="<?php echo asset_url('assets/website/magnific/magnific-popup.css'); ?>">
  
 
 <!-- About us start -->

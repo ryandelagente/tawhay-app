@@ -229,4 +229,4 @@
     </div>
    
 </section>
-<script src="<?php echo base_url(); ?>frequent_changing/js/payment_setting.js"></script>
+<script src="<?php echo asset_url('frequent_changing/js/payment_setting.js'); ?>"></script>

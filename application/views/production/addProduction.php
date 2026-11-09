@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo base_url(); ?>frequent_changing/css/add_purchase.css">
+<link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/add_purchase.css'); ?>">
 <script type="text/javascript" src="<?php echo base_url('frequent_changing/supplier.js'); ?>"></script>
 
 <input type="hidden" id="ingredient_already_remain" value="<?php echo lang('production_already_remain'); ?>">

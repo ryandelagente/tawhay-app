@@ -1,9 +1,9 @@
 <button class="ir_bg_fs_p_c_fl" onclick="printDiv('printableArea')">Print</button>
 
-<script src="<?php echo base_url(); ?>frequent_changing/js/print_daily_summary_report.js"></script>
+<script src="<?php echo asset_url('frequent_changing/js/print_daily_summary_report.js'); ?>"></script>
 
 <section class="main-content-wrapper" id="printableArea">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/custom/report.css">
+    <link rel="stylesheet" href="<?php echo asset_url('assets/dist/css/custom/report.css'); ?>">
     <div class="row">
         <div class="col-md-12">
             <!-- general form elements -->

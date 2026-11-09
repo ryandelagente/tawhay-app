@@ -215,17 +215,17 @@ if ($this->session->flashdata('exception_1')) {
 </div>
 
  
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js">
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/jquery.dataTables.min.js'); ?>"></script>
+<script src="<?php echo asset_url('assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js'); ?>">
 </script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/dataTables.bootstrap4.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/dataTables.buttons.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/buttons.html5.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/buttons.print.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/jszip.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/pdfmake.min.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/js/dataTable/vfs_fonts.js"></script>
-<script src="<?php echo base_url(); ?>frequent_changing/newDesign/js/forTable.js"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/dataTables.bootstrap4.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/dataTables.buttons.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/buttons.html5.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/buttons.print.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/jszip.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/pdfmake.min.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/js/dataTable/vfs_fonts.js'); ?>"></script>
+<script src="<?php echo asset_url('frequent_changing/newDesign/js/forTable.js'); ?>"></script>
 
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/POS/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>frequent_changing/js/sale.js"></script>
+<script type="text/javascript" src="<?php echo asset_url('assets/POS/js/jquery.cookie.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset_url('frequent_changing/js/sale.js'); ?>"></script>

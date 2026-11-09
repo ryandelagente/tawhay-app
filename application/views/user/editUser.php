@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo base_url();?>frequent_changing/css/custom_check_box.css">
+<link rel="stylesheet" href="<?php echo asset_url('frequent_changing/css/custom_check_box.css'); ?>">
 <section class="main-content-wrapper">
     <section class="content-header">
         <h3 class="top-left-header">
