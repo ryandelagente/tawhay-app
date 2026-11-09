@@ -6509,10 +6509,12 @@
                   let selected_order_done_cooking_items = selected_order.attr(
                       "data-done-cooking"
                   );
-                  if (selected_order_started_cooking_items > 0 || selected_order_done_cooking_items > 0) {
-                      toastr['error']((order_in_progress_or_done), '');
-                  }else{
-                      let user_role_now = $("base").attr("data-role");
+                  {
+                      // every cancel is approved by a supervisor (the user themselves or a PIN), so that approval
+                      // also covers orders the kitchen has already started or finished
+                      let user_role_now = $("base[data-role]").attr("data-role");
+                      let user_designation_now = $("base[data-designation]").attr("data-designation");
+                      let is_supervisor_now = user_role_now == "Admin" || ["Admin", "Super Admin", "Manager"].indexOf(user_designation_now) > -1;
                       let ask_reason_dialog = function(approved_by){
                       swal({
                               title: warning + "!",
@@ -6531,33 +6533,16 @@
                                   $(".sa-button-container").find('.cancel').click();
                                   if(approved_by){ inputValue = inputValue + " (Approved by supervisor: " + approved_by + ")"; }
 
-                                  let sale_no = $(".holder .order_details .single_order[data-selected=selected]").find(".running_order_order_number").text();
-                                  if(checkInternetConnection()){
-                                      $.ajax({
-                                          url: base_url + "Kitchen/check_update_kitchen_status_ajax",
-                                          method: "post",
-                                          dataType: "json",
-                                          data:{sale_no:sale_no},
-                                          success: function (data) {
-                                              if(data.status==false){
-                                                  cancel_order_by_click(sale_no,inputValue);
-                                              }else if(data.is_done==true){
-                                                  toastr['error']((this_item_is_under_cooking_please_contact_with_admin), '');
-                                                  return false;
-                                              }else if(data.is_cooked==true){
-                                                  toastr['error']((this_item_already_cooked_please_contact_with_admin), '');
-                                                  return false;
-                                              }
-                                          },
-                                          error: function () {},
-                                      });
-                                  }else {
-                                      cancel_order_by_click(sale_no,inputValue);
+                                  if (selected_order_started_cooking_items > 0 || selected_order_done_cooking_items > 0) {
+                                      inputValue = inputValue + " (kitchen had already started or finished items)";
                                   }
+
+                                  let sale_no = $(".holder .order_details .single_order[data-selected=selected]").find(".running_order_order_number").text();
+                                  cancel_order_by_click(sale_no,inputValue);
                               }
                           });
                       };
-                      if(user_role_now == "Admin"){
+                      if(is_supervisor_now){
                           ask_reason_dialog("");
                       }else{
                           swal({

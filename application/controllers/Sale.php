@@ -1735,7 +1735,10 @@ class Sale extends Cl_Controller {
             $this->db->from("tbl_users");
             $this->db->where("login_pin", $pin);
             $this->db->where("del_status", 'Live');
-            $this->db->where_in("designation", array('Admin','Manager'));
+            $this->db->group_start();
+            $this->db->where_in("designation", array('Admin','Super Admin','Manager'));
+            $this->db->or_where("role", 'Admin');
+            $this->db->group_end();
             $user = $this->db->get()->row();
             if($user){
                 $res = array('status'=>true,'name'=>$user->full_name);

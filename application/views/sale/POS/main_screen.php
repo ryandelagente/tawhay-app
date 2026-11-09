@@ -569,6 +569,7 @@ foreach ($notifications as $single_notification){
     <base data-currency="">
     </base>
     <base data-role="<?php echo escape_output($this->session->userdata('role')); ?>">
+    <base data-designation="<?php echo escape_output($this->session->userdata('designation')); ?>">
     </base>
     <base data-collect-gst="<?php echo escape_output($getCompanyInfo->tax_is_gst); ?>">
     </base>
@@ -4589,7 +4590,7 @@ endif;
 
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/POS/js/howler.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/dist/js/feather.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>frequent_changing/js/pos_script_v7.3.js?v=7.6.1"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>frequent_changing/js/pos_script_v7.3.js?v=7.6.2"></script>
     <script src="<?php echo base_url(); ?>assets/POS/js/media.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/notify/jquery.notifyBar.js"></script>
     <script type="text/javascript">
