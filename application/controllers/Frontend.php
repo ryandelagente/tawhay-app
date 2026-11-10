@@ -1541,6 +1541,7 @@ class Frontend extends Cl_Controller {
                     $this->session->set_userdata($return_data);
                     $this->session->set_flashdata('success', "Successfully login with google account!");
                 }else{
+                    $data_db['company_id'] = 1;
                     $id = $this->Common_model->insertInformation($data_db, "tbl_customers");
                     $return_data = array();
                     $return_data['customer_id'] = $id;
@@ -1592,7 +1593,8 @@ class Frontend extends Cl_Controller {
                     $this->session->set_flashdata('success', "Successfully login with facebook account!");
                     $this->session->set_userdata($return_data);
                 }else{
-                    $data_db['created_date_time'] = date('Y-m-d H:i:s');
+                    // tbl_customers has no created_date_time column; added_date is set by the database
+                    $data_db['company_id'] = 1;
                     $id = $this->Common_model->insertInformation($data_db, "tbl_customers");
                     $return_data = array();
                     $return_data['customer_id'] = $id;
