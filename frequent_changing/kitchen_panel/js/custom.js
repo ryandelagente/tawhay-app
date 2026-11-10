@@ -311,8 +311,20 @@ $(document).ready(function () {
   });
 
 
+    // The item filter used to stop auto-refresh, so new orders never appeared while it was on.
+    // Now the chosen item is remembered and re-applied after every refresh instead.
+    window.kitchen_group_filter = "";
     $(document).on("change", "#group_by_order_item", function () {
-    let menu_id = $(this).val();
+    window.kitchen_group_filter = $(this).val() || "";
+    apply_kitchen_group_filter();
+  });
+
+  function apply_kitchen_group_filter() {
+    let menu_id = window.kitchen_group_filter;
+    if (!menu_id) {
+      $("#order_holder .single_order").css("display", "block");
+      return;
+    }
     let menu_name = $(
       "#group_by_order_item option[value='" + menu_id + "']"
     ).text();
@@ -334,8 +346,7 @@ $(document).ready(function () {
         $this.css("display", "none");
       }
     });
-    $("#refresh_it_or_not").html("No");
-  });
+  }
 
   $("#notification_list_holder")
     .slimscroll({
@@ -1240,12 +1251,18 @@ $(document).ready(function () {
             border: "0px solid #184055",
         });
 
+    // Poll for new orders every 5s (was 15s). Skip a tick while the previous request is still
+    // running, or while the cook has the item dropdown open (a redraw would close it).
+    window.kitchen_refresh_busy = false;
     setInterval(function () {
-        if ($("#refresh_it_or_not").html() == "Yes") {
+        if (window.kitchen_refresh_busy) {
+            return;
+        }
+        if ($("#refresh_it_or_not").html() == "Yes" && !$(".select2-container--open").length) {
             refresh_orders();
         }
         new_notification_interval();
-    }, 15000);
+    }, 5000);
     new_notification_interval();
 
     setInterval(function () {
@@ -1383,13 +1400,18 @@ $(document).ready(function () {
     function refresh_orders() {
         let url = base_url + "Kitchen/get_new_orders_ajax";
         $("#refresh_it_or_not").html("Yes");
+        window.kitchen_refresh_busy = true;
         $.ajax({
             url: url,
             method: "POST",
+            timeout: 15000,
             data: {
                 outlet_id: window.localStorage.getItem("ls_outlet_id"),
                 csrf_irestoraplus: csrf_value_,
                 kitchen_id: kitchen_id,
+            },
+            complete: function () {
+                window.kitchen_refresh_busy = false;
             },
             success: function (response) {
                 window.order_items = [];
@@ -1694,7 +1716,16 @@ $(document).ready(function () {
                 group_order_by_item_option += "</select>";
 
                 $("#group_by_order_item_holder").html(group_order_by_item_option);
+                // keep the cook's item filter across refreshes (clear it if that item has no orders left)
+                if (window.kitchen_group_filter) {
+                    if ($("#group_by_order_item option[value='" + window.kitchen_group_filter + "']").length) {
+                        $("#group_by_order_item").val(window.kitchen_group_filter);
+                    } else {
+                        window.kitchen_group_filter = "";
+                    }
+                }
                 $("#group_by_order_item").select2({ dropdownCssClass: "bigdrop" });
+                apply_kitchen_group_filter();
                 /*******************************************************************************************************
                  ****************** Construct order list end ************************************************************
                  ********************************************************************************************************/
@@ -1726,5 +1757,54 @@ $(document).ready(function () {
         }
     }
 
+    /*** Keep the kitchen screen awake and responsive ***/
+    // Stop the screen from sleeping while this page is open (browsers slow down a sleeping or
+    // hidden page's timers, which delays new orders by a minute or more). Supported on HTTPS in
+    // Chrome/Edge/Safari; silently skipped elsewhere. The lock is dropped whenever the tab is
+    // hidden, so it is requested again when the tab comes back.
+    let kitchen_wake_lock = null;
+    function request_kitchen_wake_lock() {
+        if (!("wakeLock" in navigator) || document.visibilityState !== "visible") {
+            return;
+        }
+        navigator.wakeLock.request("screen").then(function (lock) {
+            kitchen_wake_lock = lock;
+        }).catch(function () {});
+    }
+    request_kitchen_wake_lock();
+    document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") {
+            request_kitchen_wake_lock();
+            // catch up straight away instead of waiting for the next 5s tick
+            if (!window.kitchen_refresh_busy && $("#refresh_it_or_not").html() == "Yes") {
+                refresh_orders();
+            }
+        }
+    });
+
+    // Browsers block sound until someone taps the page. Show a banner until that happens so the
+    // new-order bell is not silently muted after a reload.
+    function kitchen_sound_is_locked() {
+        return typeof Howler === "undefined" || !Howler.ctx || Howler.ctx.state !== "running";
+    }
+    if (kitchen_sound_is_locked()) {
+        let sound_banner = $(
+            '<div id="kitchen_sound_banner" style="position:fixed;left:0;right:0;bottom:0;z-index:99999;' +
+            'background:#dc3545;color:#fff;font-size:20px;font-weight:bold;text-align:center;padding:16px;cursor:pointer;">' +
+            'Tap anywhere to turn on the new-order sound</div>'
+        );
+        $("body").append(sound_banner);
+        let unlock_kitchen_sound = function () {
+            if (typeof Howler !== "undefined" && Howler.ctx && Howler.ctx.state !== "running") {
+                Howler.ctx.resume();
+            }
+            $("#kitchen_sound_banner").remove();
+            request_kitchen_wake_lock();
+            document.removeEventListener("click", unlock_kitchen_sound, true);
+            document.removeEventListener("touchend", unlock_kitchen_sound, true);
+        };
+        document.addEventListener("click", unlock_kitchen_sound, true);
+        document.addEventListener("touchend", unlock_kitchen_sound, true);
+    }
 
 });

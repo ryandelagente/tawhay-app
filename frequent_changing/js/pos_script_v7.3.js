@@ -1259,10 +1259,19 @@
               }
           }
   
+          send_order_to_kitchen(order_object,is_self_order,sale_no,is_print,1);
+      }
+
+      // Sends an order to the kitchen. A dropped connection is retried (the server updates the
+      // existing kitchen order by sale_no, so a resend never duplicates it); if every attempt
+      // fails, a warning stays on screen until the cashier dismisses it.
+      function send_order_to_kitchen(order_object,is_self_order,sale_no,is_print,attempt){
+          let max_attempts = 4;
           $.ajax({
               url: base_url + "Sale/add_kitchen_sale_by_ajax",
               method: "POST",
               dataType:'json',
+              timeout: 20000,
               data: {
                   order: order_object,
                   is_self_order: is_self_order,
@@ -1294,12 +1303,29 @@
                         $("#kot_print").val(2);
                         print_kot_popup_print(data.content_data_popup_print,1);
                     }
-                    
+
                 }
 
               },
-              error: function () {
-  
+              error: function (xhr) {
+                  // retry only when the request was lost or the server hiccuped, not on a real rejection
+                  let retryable = !xhr || xhr.status === 0 || xhr.status >= 500;
+                  if(retryable && attempt < max_attempts){
+                      setTimeout(function () {
+                          send_order_to_kitchen(order_object,is_self_order,sale_no,is_print,attempt+1);
+                      }, attempt * 3000);
+                  }else{
+                      let order_no_text = sale_no;
+                      try {
+                          let parsed_order = typeof order_object === "string" ? JSON.parse(order_object) : order_object;
+                          if(parsed_order && parsed_order.sale_no){ order_no_text = parsed_order.sale_no; }
+                      } catch (e) {}
+                      toastr.error(
+                          "Order " + (order_no_text ? order_no_text : "") + " did NOT reach the kitchen. Check the internet connection, then open the order and send it again, or tell the kitchen directly.",
+                          "Kitchen not notified",
+                          {timeOut: 0, extendedTimeOut: 0, closeButton: true, tapToDismiss: true}
+                      );
+                  }
               },
           });
       }
