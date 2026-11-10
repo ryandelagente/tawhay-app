@@ -1650,6 +1650,13 @@
      * @param string
      * @param string
      */
+    /**
+     * SMTP encryption for a port: implicit SSL on 465/2465, STARTTLS on the others (587, 2525)
+     * @param string|int
+     */
+    function getSmtpEncryption($port){
+        return in_array((int)$port, array(465, 2465)) ? 'ssl' : 'tls';
+    }
     function sendEmailOnly($txt,$to_email,$attached='',$sender_email='',$subject=''){
         $company = getMainCompany();
         $smtEmail = isset($company->email_settings) && $company->email_settings?json_decode($company->email_settings):'';
@@ -1670,11 +1677,14 @@
             $mail->SMTPAuth = true;
             $mail->Username = $smtEmail->user_name;
             $mail->Password = $password;
-            $mail->SMTPSecure = 'ssl';
+            $mail->SMTPSecure = getSmtpEncryption($smtEmail->port_address);
             $mail->Port = $smtEmail->port_address;
+            $mail->Timeout = 20;
 
-            $mail->setFrom($username, $domain_name);
-            $mail->addReplyTo($username, $domain_name);
+            // the login can be a provider account name, so send from the configured address instead
+            $from_email = isset($smtEmail->email_send_to) && $smtEmail->email_send_to ? $smtEmail->email_send_to : $username;
+            $mail->setFrom($from_email, $domain_name);
+            $mail->addReplyTo($from_email, $domain_name);
             // Add a recipient
             $mail->addAddress($to_email);
             // Email subject
@@ -5084,8 +5094,9 @@
                 $mail->SMTPAuth = true;
                 $mail->Username = $emailSetting->user_name;
                 $mail->Password = $emailSetting->password;
-                $mail->SMTPSecure = 'ssl';
+                $mail->SMTPSecure = getSmtpEncryption($emailSetting->port_address);
                 $mail->Port = $emailSetting->port_address;
+                $mail->Timeout = 20;
                 $mail->setFrom($emailSetting->email_send_to, $company->business_name);
                 $mail->addReplyTo($emailSetting->email_send_to, $company->business_name);
                 // Add a recipient
