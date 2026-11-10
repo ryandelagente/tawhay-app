@@ -400,8 +400,15 @@ class Kitchen extends Cl_Controller {
         foreach($previous_id_array as $single_previous_id){
             $previous_id = $single_previous_id;
             $item_info = $this->Kitchen_model->getItemInfoByPreviousId($previous_id);
+            // the item is gone if the order was cancelled or changed while the kitchen was tapping it
+            if(!$item_info){
+                continue;
+            }
             $sale_id = $item_info->sales_id;
             $sale_info = $this->Kitchen_model->getSaleBySaleId($sale_id);
+            if(!$sale_info){
+                continue;
+            }
 
             $tables_booked = $sale_info[0]->orders_table_text;
 
@@ -482,6 +489,11 @@ class Kitchen extends Cl_Controller {
         foreach($previous_id_array as $single_previous_id){
             $previous_id = $single_previous_id;
             $item_info = $this->Kitchen_model->getItemInfoByPreviousId($previous_id);
+            // the item is gone if the order was cancelled or changed while the kitchen was tapping it
+            if(!$item_info){
+                $i++;
+                continue;
+            }
             $sale_id = $item_info->sales_id;
             if($cooking_status=="Started Cooking"){
                 $cooking_status_update_array = array('cooking_status' => $cooking_status, 'cooking_start_time' => date('Y-m-d H:i:s'));
