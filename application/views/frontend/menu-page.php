@@ -91,7 +91,7 @@ $outlet_details = getOutletById($online_selected_outlet);
         ?>
           <div class="col-xl-3 col-lg-4 col-md-6 mb-3 cat-id-<?php echo $food->category_id ?>">
             <div class="product">
-              <a class="product-thumb" href="<?php echo base_url() . 'food-details/'; ?><?php echo d($food->id,1) ?>/<?php echo d($food->category_id,1) ?>"> <img src="<?php echo $img ?>" alt="" /> </a>
+              <a class="product-thumb" href="<?php echo base_url() . 'food-details/'; ?><?php echo d($food->id,1) ?>/<?php echo d($food->category_id,1) ?>"> <img src="<?php echo $img ?>" alt="<?php echo $food->name ?>" /> </a>
               <div class="product-body">
                 <div class="product-desc">
                   <div class="rating-wrap">

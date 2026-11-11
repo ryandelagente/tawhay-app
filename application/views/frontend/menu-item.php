@@ -56,7 +56,7 @@
       <div class="col-md-5">
         <!-- Main Thumb -->
         <div class="product-thumb">
-          <img src="<?php echo $img; ?>" alt="<?php echo isset($food_details->name) && $food_details->name ? $food_details->description : ''; ?>">
+          <img src="<?php echo $img; ?>" alt="<?php echo isset($food_details->name) ? $food_details->name : ''; ?>">
         </div>
         <!-- /Main Thumb -->
       </div>

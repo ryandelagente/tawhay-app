@@ -35,7 +35,7 @@ $menu_booklet = 'uploads/website/tawhay-menu-booklet.pdf';
     <div class="row align-items-center">
 
       <div class="col-lg-6 mb-lg-30 ct-single-img-wrapper">
-        <img src="<?php echo base_url() ?>uploads/service_section/<?php echo isset($service_section->service_image) && $service_section->service_image ? $service_section->service_image : '' ?>" alt="">
+        <img src="<?php echo base_url() ?>uploads/service_section/<?php echo isset($service_section->service_image) && $service_section->service_image ? $service_section->service_image : '' ?>" alt="Tawhay seafood restaurant in Coron, Palawan">
       </div>
       <div class="col-lg-6">
         <div class="section-title-wrap mr-lg-30">
@@ -216,7 +216,7 @@ $menu_booklet = 'uploads/website/tawhay-menu-booklet.pdf';
               <a class="post-thumbnail popup-with-move-anim" href="#gallary_<?php echo escape_output($gallery->id) ?>">
                 <img loading="lazy" class="w-100 cursor_zoom"
                   src="<?php echo base_url() ?>uploads/photo_gallery/<?php echo escape_output($gallery->photo) ?>"
-                  alt="">
+                  alt="Food and dining at Tawhay, seafood restaurant in Coron">
               </a>
               <div id="gallary_<?php echo escape_output($gallery->id) ?>" class="zoom-anim-dialog mfp-hide mfp-custom-modal"><img src="<?php echo base_url() ?>uploads/photo_gallery/<?php echo escape_output($gallery->photo) ?>" class="img-fluid"></div>
             </div>

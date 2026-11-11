@@ -85,7 +85,7 @@ $language = $this->session->userdata('language');
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?php echo escape_output($site_name); ?></title>
+<?php $this->load->view('frontend/seo_meta', array('site_name' => isset($site_name) ? $site_name : '')); ?>
 
   <link rel="stylesheet" href="<?php echo asset_url('assets/website/css/plugins/bootstrap.min.css'); ?>">
   <script src="<?php echo asset_url('assets/bower_components/jquery/dist/jquery.min.js'); ?>"></script>

@@ -558,6 +558,34 @@ class Frontend extends Cl_Controller {
         $this->load->view('frontend/website_layout', $data);
     }
 
+    /**
+     * sitemap.xml for search engines: the main pages plus every dish on Order Online
+     */
+    public function sitemap(){
+        // the online menu is per outlet; pick it the same way the website layout does
+        $outlets = getAllOutlet();
+        if (is_array($outlets) && sizeof($outlets) == 1) {
+            $this->session->set_userdata('online_selected_outlet_updated', $outlets[0]->id);
+        }
+        $urls = array(
+            array(base_url(), '1.0'),
+            array(base_url().'online-order', '0.9'),
+            array(base_url().'reservation', '0.8'),
+            array(base_url().'about-us', '0.7'),
+            array(base_url().'contact-us', '0.7'),
+            array(base_url().'privacy-policy', '0.2'),
+        );
+        foreach (getFoodMenuForMenuPage() as $food) {
+            $urls[] = array(base_url().'food-details/'.d($food->id,1).'/'.d($food->category_id,1), '0.6');
+        }
+        $xml = '<?xml version="1.0" encoding="UTF-8"?>'."\n".'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'."\n";
+        foreach ($urls as $url) {
+            $xml .= '  <url><loc>'.htmlspecialchars($url[0], ENT_XML1, 'UTF-8').'</loc><priority>'.$url[1].'</priority></url>'."\n";
+        }
+        $xml .= '</urlset>'."\n";
+        $this->output->set_content_type('application/xml', 'UTF-8')->set_output($xml);
+    }
+
     public function oldOrders(){
         $data = array();
         $data['header_content'] = $this->load->view('frontend/header_section_menu', $data, TRUE);
