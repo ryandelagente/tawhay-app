@@ -161,7 +161,7 @@ class DailySalesReport extends CI_Controller {
             }
             $html = '<h3 style="margin:24px 0 8px;font-size:16px;color:#2d1305;">'.$e($title).'</h3><table style="width:100%;border-collapse:collapse;font-size:14px;"><tr>';
             foreach ($head as $i => $h) {
-                $html .= '<th style="'.($i ? $num : $cell).'color:#875428;font-weight:600;">'.$e($h).'</th>';
+                $html .= '<th style="'.($i ? $num : $cell.'text-align:left;').'color:#875428;font-weight:600;">'.$e($h).'</th>';
             }
             $html .= '</tr>';
             foreach ($rows as $r) {
