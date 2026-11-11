@@ -578,7 +578,8 @@ class Frontend extends Cl_Controller {
         foreach (getFoodMenuForMenuPage() as $food) {
             $urls[] = array(base_url().'food-details/'.d($food->id,1).'/'.d($food->category_id,1), '0.6');
         }
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>'."\n".'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'."\n";
+        // no XML declaration: the app emits a little whitespace before every response, and a declaration must come first
+        $xml = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'."\n";
         foreach ($urls as $url) {
             $xml .= '  <url><loc>'.htmlspecialchars($url[0], ENT_XML1, 'UTF-8').'</loc><priority>'.$url[1].'</priority></url>'."\n";
         }
