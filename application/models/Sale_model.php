@@ -312,7 +312,7 @@ class Sale_model extends CI_Model {
      * @param int
      * @param string
      */
-    public function getWaitersForThisCompany($company_id,$table){
+    public function getWaitersForThisCompany($company_id,$table,$also_role_id=''){
         $language_manifesto = $this->session->userdata('language_manifesto');
         if(str_rot13($language_manifesto)=="eriutoeri"){
           $value = $this->session->userdata("outlet_id");
@@ -323,7 +323,13 @@ class Sale_model extends CI_Model {
           $this->db->select('*');
           $this->db->from('tbl_users');
           $this->db->where("FIND_IN_SET($value, outlets) >", 0);
+          // $also_role_id adds users of that role (e.g. Cashier-Waiter) to the waiters
+          $this->db->group_start();
           $this->db->where("designation", 'Waiter');
+          if($also_role_id){
+            $this->db->or_where("role_id", $also_role_id);
+          }
+          $this->db->group_end();
           $this->db->where("company_id", $company_id);
           $this->db->where("del_status", 'Live');
           $this->db->order_by('full_name', 'ASC');
@@ -340,7 +346,12 @@ class Sale_model extends CI_Model {
             $this->db->from($table);
             $this->db->where("company_id", $company_id);
             $this->db->where("outlet_id", $outlet_id);
+            $this->db->group_start();
             $this->db->where("designation", 'Waiter');
+            if($also_role_id){
+                $this->db->or_where("role_id", $also_role_id);
+            }
+            $this->db->group_end();
             $this->db->where("del_status", 'Live');
             $this->db->order_by('full_name', 'ASC');
             $result = $this->db->get();

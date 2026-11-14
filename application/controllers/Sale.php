@@ -490,7 +490,8 @@ class Sale extends Cl_Controller {
         $data['denominations'] = $this->Common_model->getDenomination($company_id);
         $data['menu_categories'] = $this->Common_model->getSortingForPOS();
         $data['menu_modifiers'] = $this->Sale_model->getAllMenuModifiers();
-        $data['waiters'] = $this->Sale_model->getWaitersForThisCompany($company_id,'tbl_users');
+        // role 6 = Cashier-Waiter: those cashiers can also be picked as the waiter on the POS
+        $data['waiters'] = $this->Sale_model->getWaitersForThisCompany($company_id,'tbl_users',6);
         $data['MultipleCurrencies'] = $this->Common_model->getAllByCompanyId($company_id, "tbl_multiple_currencies");
         $data['users'] = $this->Common_model->getAllByCompanyId($company_id, "tbl_users");
         $data['outlet_information'] = $this->Common_model->getDataById($outlet_id, "tbl_outlets");
