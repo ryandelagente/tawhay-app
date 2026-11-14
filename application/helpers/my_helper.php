@@ -5970,3 +5970,45 @@ if (!function_exists('asset_url')) {
         return base_url() . $path . (is_file($file) ? '?v=' . filemtime($file) : '');
     }
 }
+
+if (!function_exists('notifyOwnerLater')) {
+    /**
+     * Email the owner about a new order, reservation or message once the visitor's page has been sent,
+     * so a slow or failing mail server never delays or breaks the visitor. Recipients come from
+     * $config['owner_notification_to'] in config.php (comma separated).
+     * @param string subject
+     * @param array label => value rows; values are plain text (stored HTML entities are decoded)
+     * @param string optional plain-text block shown under the rows, e.g. the ordered items
+     */
+    function notifyOwnerLater($subject, $rows, $details = '') {
+        $CI = &get_instance();
+        $to = trim((string)$CI->config->item('owner_notification_to'));
+        if ($to == '') {
+            return;
+        }
+        register_shutdown_function(function () use ($to, $subject, $rows, $details) {
+            if (function_exists('fastcgi_finish_request')) {
+                fastcgi_finish_request();
+            }
+            $e = function ($text) {
+                return htmlspecialchars(html_entity_decode((string)$text, ENT_QUOTES, 'UTF-8'), ENT_QUOTES, 'UTF-8');
+            };
+            $html = '<div style="font-family:Arial,Helvetica,sans-serif;color:#222;max-width:600px;">'
+                .'<h2 style="margin:0 0 12px;color:#2d1305;">'.$e($subject).'</h2><table style="border-collapse:collapse;font-size:14px;width:100%;">';
+            foreach ($rows as $label => $value) {
+                $html .= '<tr><td style="padding:6px 8px;border-bottom:1px solid #eee;color:#875428;white-space:nowrap;vertical-align:top;">'.$e($label).'</td>'
+                    .'<td style="padding:6px 8px;border-bottom:1px solid #eee;">'.nl2br($e($value)).'</td></tr>';
+            }
+            $html .= '</table>';
+            if ($details != '') {
+                $html .= '<p style="margin:16px 0 0;font-size:14px;line-height:1.6;">'.nl2br($e($details)).'</p>';
+            }
+            $html .= '<p style="margin:20px 0 0;font-size:12px;color:#888;">Sent automatically by tawhay.app at '.$e(date('g:i a, j M Y')).'.</p></div>';
+            foreach (array_filter(array_map('trim', explode(',', $to))) as $email) {
+                if (!sendEmailOnlyAZ(html_entity_decode($subject, ENT_QUOTES, 'UTF-8'), $html, $email, '', '', 1)) {
+                    log_message('error', 'Owner notification "'.$subject.'" could not be sent to '.$email);
+                }
+            }
+        });
+    }
+}

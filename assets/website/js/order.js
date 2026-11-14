@@ -1023,6 +1023,8 @@
       order_info += '"token_number":"' + token_number + '",';
       order_info += '"customer_id":"' + customer_id + '",';
       order_info += '"customer_address":"'+faddress+'",';
+      // the phone is required on the checkout form, so send it with the order
+      order_info += '"customer_phone":' + JSON.stringify($("#phone").val() || "") + ',';
       order_info += '"customer_gst_number":"",';
       order_info += '"status":"Pending",';
       order_info += '"user_name":"",';

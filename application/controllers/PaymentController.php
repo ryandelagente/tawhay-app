@@ -108,6 +108,10 @@ class PaymentController extends Cl_Controller
        
         //update customer information 
         $customer_info['address'] = preg_replace("/[\n\r]/"," ",escape_output($data['del_address'])); #remove new line from address
+        $customer_phone = isset($order_details->customer_phone) ? trim(preg_replace('/[^0-9+\- ]/', '', $order_details->customer_phone)) : '';
+        if($customer_phone!=''){
+            $customer_info['phone'] = $customer_phone;
+        }
         $this->Common_model->updateInformation($customer_info, $data['customer_id'], "tbl_customers");
 
         $return_data['customer_address'] = $customer_info['address'];
@@ -241,6 +245,26 @@ class PaymentController extends Cl_Controller
                 $notification_data['waiter_id'] = trim_checker($order_details->waiter_id);
                 $notification_data['outlet_id'] = trim($order_details->outlet_id);
                 $this->db->insert('tbl_notifications', $notification_data);
+
+                // email the owner about new orders only, not when an existing order is changed
+                if(!(isset($sale_d->id) && $sale_d->id)){
+                    $customer = $this->db->select('name, phone, email')->where('id', $data['customer_id'])->get('tbl_customers')->row();
+                    $item_lines = array();
+                    foreach($order_details->items as $item){
+                        $item_lines[] = $item->qty.' x '.$item->menu_name.($item->item_note ? ' (note: '.$item->item_note.')' : '');
+                    }
+                    $order_types = array(1 => 'Dine In', 2 => 'Take Away', 3 => 'Delivery');
+                    notifyOwnerLater('New online order '.$sale_no, array(
+                        'Order' => $sale_no,
+                        'Customer' => $customer ? $customer->name : '',
+                        'Phone' => $customer_phone != '' ? $customer_phone : ($customer ? $customer->phone : ''),
+                        'Email' => $customer ? $customer->email : '',
+                        'Order type' => isset($order_types[$data['order_type']]) ? $order_types[$data['order_type']] : '',
+                        'Address' => $data['del_address'],
+                        'Total' => getAmtCustom($data['total_payable']),
+                        'Payment' => 'Cash on delivery',
+                    ), "Items:\n".implode("\n", $item_lines));
+                }
             }
 
 

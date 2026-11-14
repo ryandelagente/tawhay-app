@@ -516,6 +516,12 @@ class Frontend extends Cl_Controller {
                 $contact_us['company_id'] = 1;
                 $this->Common_model->insertInformation($contact_us, "tbl_contacts");
                 $this->session->set_flashdata('exception', lang('insertion_success'));
+                notifyOwnerLater('New website message: '.$contact_us['subject'], array(
+                    'From' => $contact_us['first_name'].' '.$contact_us['last_name'],
+                    'Email' => $contact_us['email'],
+                    'Subject' => $contact_us['subject'],
+                    'Message' => $contact_us['message'],
+                ));
 
                 redirect('contact-us');
             }else{
@@ -747,6 +753,15 @@ class Frontend extends Cl_Controller {
 
                 $this->Common_model->insertInformation($reservations, "tbl_reservations");
                 $this->session->set_flashdata('exception', lang('reseration_confirm_message'));
+                notifyOwnerLater('New reservation: '.$reservations['name'].', '.$reservations['number_of_guest'].' guests', array(
+                    'Name' => $reservations['name'],
+                    'Phone' => $reservations['phone'],
+                    'Guests' => $reservations['number_of_guest'],
+                    'Date' => $reservations['reservation_date'],
+                    'Time' => $reservations['reservation_time'],
+                    'Type' => $reservations['reservation_type'],
+                    'Special request' => $reservations['special_request'],
+                ));
             }
             redirect('reservation');
         } else {
