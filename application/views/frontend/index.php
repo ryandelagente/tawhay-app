@@ -177,6 +177,16 @@ $menu_booklet = 'uploads/website/tawhay-menu-booklet.pdf';
 <?php endif; ?>
 <!-- Full Menu End -->
 
+<!-- Google Reviews Start -->
+<!-- Elfsight Google Reviews | Tawhay -->
+<div class="section" style="padding-top: 40px; padding-bottom: 0;">
+  <div class="container">
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div class="elfsight-app-7141e5a3-7c7d-4670-a8fb-0d72ffda908f" data-elfsight-app-lazy></div>
+  </div>
+</div>
+<!-- Google Reviews End -->
+
 <!-- Gallery Start -->
 <div class="section" style="padding-top: 40px;">
   <div class="container">
