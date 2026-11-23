@@ -181,6 +181,9 @@ $menu_booklet = 'uploads/website/tawhay-menu-booklet.pdf';
 <!-- Elfsight Google Reviews | Tawhay -->
 <div class="section" style="padding-top: 40px; padding-bottom: 0;">
   <div class="container">
+    <div class="section-title-wrap">
+      <h2 class="title">What Our Customers Say</h2>
+    </div>
     <script src="https://elfsightcdn.com/platform.js" async></script>
     <div class="elfsight-app-7141e5a3-7c7d-4670-a8fb-0d72ffda908f" data-elfsight-app-lazy></div>
   </div>
