@@ -323,11 +323,11 @@ class Sale_model extends CI_Model {
           $this->db->select('*');
           $this->db->from('tbl_users');
           $this->db->where("FIND_IN_SET($value, outlets) >", 0);
-          // $also_role_id adds users of that role (e.g. Cashier-Waiter) to the waiters
+          // $also_role_id adds users of that role, or of each role in an array, to the waiters
           $this->db->group_start();
           $this->db->where("designation", 'Waiter');
           if($also_role_id){
-            $this->db->or_where("role_id", $also_role_id);
+            $this->db->or_where_in("role_id", (array)$also_role_id);
           }
           $this->db->group_end();
           $this->db->where("company_id", $company_id);
@@ -349,7 +349,7 @@ class Sale_model extends CI_Model {
             $this->db->group_start();
             $this->db->where("designation", 'Waiter');
             if($also_role_id){
-                $this->db->or_where("role_id", $also_role_id);
+                $this->db->or_where_in("role_id", (array)$also_role_id);
             }
             $this->db->group_end();
             $this->db->where("del_status", 'Live');
